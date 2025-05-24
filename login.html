@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录 - 大美安徽</title>
+    <!-- 共用样式 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 保持与首页一致的样式 */
+        :root {
+            --primary-color: #2d5f2a;
+            --secondary-color: #8ba989;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(45, 95, 42, 0.25);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 12px;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #1f4720;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏（与首页一致） -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="安徽文旅" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">返回首页</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 登录表单 -->
+    <div class="login-container">
+        <div class="login-card">
+            <h2 class="text-center mb-4">用户登录</h2>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">用户名</label>
+                    <input type="text" class="form-control" id="username" name="username" required placeholder="请输入用户名">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label">密码</label>
+                    <input type="password" class="form-control" id="password" name="password" required
+                        placeholder="请输入密码">
+                </div>
+                <button type="submit" class="btn btn-primary">登录</button>
+                <div class="text-center mt-3">
+                    <a href="#" class="text-decoration-none text-secondary">忘记密码？</a>
+                    <span class="mx-2">|</span>
+                    <a href="#" class="text-decoration-none text-secondary">立即注册</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 页脚（与首页一致） -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2023 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 表单验证示例
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // 简单前端验证
+            if (username.trim() === '' || password.trim() === '') {
+                alert('请输入完整的登录信息');
+                return;
+            }
+
+            // 此处可添加AJAX请求
+            console.log('提交登录信息:', { username, password });
+
+            // 模拟成功跳转
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>
