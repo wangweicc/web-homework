@@ -91,9 +91,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary">登录</button>
                 <div class="text-center mt-3">
-                    <a href="#" class="text-decoration-none text-secondary">忘记密码？</a>
+                    <a href="#" id="reset-link" class="text-decoration-none text-secondary">忘记密码？</a>
                     <span class="mx-2">|</span>
-                    <a href="#" class="text-decoration-none text-secondary">立即注册</a>
+                    <a href="#" id="register-link" class="text-decoration-none text-secondary">立即注册</a>
                 </div>
             </form>
         </div>
@@ -102,7 +102,7 @@
     <!-- 页脚（与首页一致） -->
     <footer>
         <div class="container text-center">
-            <p>&copy; 2023 大美安徽文化旅游网</p>
+            <p>&copy; 2025 大美安徽文化旅游网</p>
             <p>皖ICP备12345678号</p>
         </div>
     </footer>
@@ -113,21 +113,34 @@
         // 表单验证示例
         document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault();
-
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-
-            // 简单前端验证
             if (username.trim() === '' || password.trim() === '') {
                 alert('请输入完整的登录信息');
                 return;
             }
-
-            // 此处可添加AJAX请求
-            console.log('提交登录信息:', { username, password });
-
-            // 模拟成功跳转
-            window.location.href = 'index.html';
+            // 校验注册信息
+            var regUser = localStorage.getItem('registerUser');
+            if (regUser) {
+                var userObj = JSON.parse(regUser);
+                if (userObj.username === username && userObj.password === password) {
+                    window.localStorage.setItem('isLogin', '1');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('用户名或密码错误');
+                }
+            } else {
+                alert('请先注册账号');
+            }
+        });
+        // 注册和找回密码跳转
+        document.getElementById('register-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'register.html';
+        });
+        document.getElementById('reset-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'reset.html';
         });
     </script>
 </body>

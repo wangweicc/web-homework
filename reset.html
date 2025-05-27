@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>找回密码 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .reset-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reset-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .btn-primary {
+            background-color: #2d5f2a;
+            border: none;
+            padding: 12px;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #1f4720;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reset-container">
+        <div class="reset-card">
+            <h2 class="text-center mb-4">找回密码</h2>
+            <form id="resetForm">
+                <div class="mb-3">
+                    <label for="reset-username" class="form-label">用户名</label>
+                    <input type="text" class="form-control" id="reset-username" required placeholder="请输入用户名">
+                </div>
+                <div class="mb-3">
+                    <label for="reset-email" class="form-label">邮箱</label>
+                    <input type="email" class="form-control" id="reset-email" required placeholder="请输入注册邮箱">
+                </div>
+                <div class="mb-4">
+                    <label for="reset-password" class="form-label">新密码</label>
+                    <input type="password" class="form-control" id="reset-password" required placeholder="请输入新密码">
+                </div>
+                <button type="submit" class="btn btn-primary">重置密码</button>
+                <div class="text-center mt-3">
+                    <a href="login.html" class="text-decoration-none text-secondary">返回登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('resetForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var username = document.getElementById('reset-username').value;
+            var email = document.getElementById('reset-email').value;
+            var password = document.getElementById('reset-password').value;
+            if (!username || !email || !password) {
+                alert('请填写完整信息');
+                return;
+            }
+            var regUser = localStorage.getItem('registerUser');
+            if (regUser) {
+                var userObj = JSON.parse(regUser);
+                if (userObj.username === username && userObj.email === email) {
+                    userObj.password = password;
+                    localStorage.setItem('registerUser', JSON.stringify(userObj));
+                    alert('密码重置成功，请登录！');
+                    window.location.href = 'login.html';
+                } else {
+                    alert('用户名或邮箱不正确！');
+                }
+            } else {
+                alert('用户名不存在！');
+            }
+        });
+    </script>
+</body>
+
+</html>

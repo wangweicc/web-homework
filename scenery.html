@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山水安徽 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .scenery-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .scenery-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 16px 32px rgba(45, 95, 42, 0.18);
+        }
+
+        footer {
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            color: white;
+            padding: 48px 0 32px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 60px;
+            height: 60px;
+        }
+
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+            margin-bottom: .5rem;
+            font-weight: 500;
+            line-height: 4.2;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top"
+        style="background-color:rgba(255,255,255,0.95);box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="安徽文旅" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link" href="food.html">美食安徽</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="section-title text-center" data-aos="fade-up" style="color:#2d5f2a;">山水安徽</h2>
+        <div class="row justify-content-center" style="gap: 48px;">
+            <div class="col-auto d-flex justify-content-center" data-aos="fade-up">
+                <a href="huangshan.html" class="text-decoration-none">
+                    <div class="scenery-card p-0 d-flex flex-column align-items-center justify-content-center"
+                        style="width:300px;height:300px;cursor:pointer;">
+                        <img src="https://img1.qunarzz.com/travel/d7/1707/7e/2e7e7b2b5b2b7e02.jpg" alt="黄山风景区"
+                            style="width:140px;height:140px;object-fit:cover;border-radius:18px;">
+                        <h5 class="mt-4 mb-0 text-center" style="font-size:1.3rem;">黄山风景区</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-auto d-flex justify-content-center" data-aos="fade-up">
+                <a href="jiuhuashan.html" class="text-decoration-none">
+                    <div class="scenery-card p-0 d-flex flex-column align-items-center justify-content-center"
+                        style="width:300px;height:300px;cursor:pointer;">
+                        <img src="https://img1.qunarzz.com/travel/d7/1707/7e/2e7e7b2b5b2b7e03.jpg" alt="九华山"
+                            style="width:140px;height:140px;object-fit:cover;border-radius:18px;">
+                        <h5 class="mt-4 mb-0 text-center" style="font-size:1.3rem;">九华山</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-auto d-flex justify-content-center" data-aos="fade-up">
+                <a href="tianzhushan.html" class="text-decoration-none">
+                    <div class="scenery-card p-0 d-flex flex-column align-items-center justify-content-center"
+                        style="width:300px;height:300px;cursor:pointer;">
+                        <img src="https://img1.qunarzz.com/travel/d7/1707/7e/2e7e7b2b5b2b7e04.jpg" alt="天柱山"
+                            style="width:140px;height:140px;object-fit:cover;border-radius:18px;">
+                        <h5 class="mt-4 mb-0 text-center" style="font-size:1.3rem;">天柱山</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer style="background-color:#2d5f2a;color:white;padding:40px 0;margin-top:40px;">
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+    </script>
+</body>
+
+</html>
