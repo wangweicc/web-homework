@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九华山 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pictures/jiuhuashan.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(3px);
+            min-height: 100%;
+            min-width: 100%;
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">九华山</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/jiuhuashan.jpg" alt="九华山全景" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>九华山位于安徽省池州市青阳县境内，是中国佛教四大名山之一，是地藏菩萨的道场，被誉为"地藏菩萨的家乡"。九华山是国家5A级旅游景区，是集自然风光与佛教文化为一体的著名旅游胜地。</p>
+                    <p>九华山形成于侏罗纪，历经亿万年的地质运动，形成了奇峰怪石、峡谷溪流、瀑布深潭等丰富多彩的自然景观。山上寺庙众多，香火鼎盛，是中国佛教禅宗、净土宗的重要传播地。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">著名景点</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>肉身宝殿</h5>
+                            <p>肉身宝殿是九华山最负盛名的景点之一，供奉着明代高僧无瑕法师的肉身，已有近四百年历史，是佛教界的一大奇观。无瑕法师圆寂后肉身不腐，被尊为地藏菩萨的化身。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>百岁宫</h5>
+                            <p>百岁宫位于九华山半山腰，是一座规模宏大的古建筑群，始建于唐代，为纪念金乔觉（韩国王子，后成为高僧）而建。宫内有金乔觉修行的洞窟，是九华山重要的朝拜场所。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>天台峰</h5>
+                            <p>天台峰是九华山的主峰，海拔1342米，顶上建有天台寺，是观赏日出、云海的最佳地点。站在天台峰上，可俯瞰九华山全景，一览众山小。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">佛教文化</h3>
+                    <p>九华山佛教始于东晋，兴盛于唐代，鼎盛于明清，至今已有1500多年历史。唐代时，新罗国（今韩国）王子金乔觉来此修行，圆寂后被尊为地藏菩萨化身，使九华山成为地藏菩萨道场。</p>
+                    <p>九华山现有大小寺庙99座，僧尼千余人。其中最著名的有：祗园寺、甘露寺、化城寺、肉身宝殿等。每年农历七月三十日（地藏菩萨诞辰）和九月三十日（地藏菩萨成道日）都会举行盛大的庙会活动，吸引全国各地的信徒前来朝拜。
+                    </p>
+                    <p>九华山还保存了大量珍贵的佛教文物，如佛像、经书、法器等，其中包括许多国家级文物保护单位，是研究中国佛教史和艺术史的重要资料。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">自然风光</h3>
+                    <p>九华山自然风光秀丽，有"奇秀甲于九州"之誉。山上峰峦叠嶂，溪流纵横，植被丰富，四季景色各异。</p>
+                    <p><strong>花台景区：</strong>是九华山自然景观最集中的区域，以奇峰怪石、悬崖峭壁、深谷峡壑为特色，主要景点有莲花峰、天柱峰、仙桃石等。</p>
+                    <p><strong>九子岭景区：</strong>以九座山峰排列如九个孩子，故称九子岭，风景优美，是徒步爱好者的天堂。</p>
+                    <p><strong>十王峡景区：</strong>是一条长约2公里的峡谷，峡谷中溪水潺潺，两岸古树参天，是避暑纳凉的好去处。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">交通指南</h3>
+                    <p><strong>自驾路线：</strong>从合肥、南京、杭州等城市可通过高速公路到达池州市，再转到九华山风景区。</p>
+                    <p><strong>公共交通：</strong>池州有火车站和汽车站，可以从各大城市乘车到达；到达池州后，可乘坐公交车或出租车前往九华山景区。</p>
+                    <p><strong>景区交通：</strong>景区内有专线巴士连接各个景点；也可乘坐索道上山，或选择徒步登山，体验传统朝圣之旅。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">旅游贴士</h3>
+                    <ul>
+                        <li>最佳旅游季节：四季皆宜，其中春秋两季气候最为宜人。</li>
+                        <li>门票信息：旺季（3月1日-11月30日）190元/人，淡季（12月1日-2月末）160元/人，索道票另计。</li>
+                        <li>开放时间：全天开放，部分寺庙早晚有佛事活动。</li>
+                        <li>建议游览时间：2-3天，可充分体验九华山的自然风光和佛教文化。</li>
+                        <li>住宿信息：山上有寺庙提供的香客接待站，也有现代化酒店，价格从几十元到几百元不等。</li>
+                        <li>饮食特色：九华山素食文化发达，推荐品尝寺庙的素斋和当地特色小吃。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

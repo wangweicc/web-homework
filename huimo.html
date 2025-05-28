@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>徽墨制作技艺 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">徽墨制作技艺</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/huimo.jpg" alt="徽墨作品" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>徽墨，又称歙墨，是中国传统四大名墨之一，源于安徽省黄山市歙县，距今已有近两千年历史。徽墨制作技艺是国家级非物质文化遗产，2008年被列入国家级非物质文化遗产名录。</p>
+                    <p>徽墨以"光、细、坚、重、纯、香"著称，是中国传统文房四宝（笔、墨、纸、砚）之一，不仅是文人墨客书写绘画的重要工具，更是集实用性与艺术性于一体的文化珍品。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史渊源</h3>
+                    <p>徽墨起源于东汉时期，当时歙县人方术已开始制墨，但规模较小。至唐代，歙墨制作技艺有了较大发展，并开始享有盛誉。宋代时，歙县墨业兴盛，产量大增，质量提高，成为全国墨业中心。</p>
+                    <p>明清时期，徽墨达到鼎盛时期。清代歙县汪近圣制墨技艺精湛，所制"澄心堂墨"被誉为"天下第一墨"。徽墨制作曾是歙县的重要产业，在徽州经济发展中占有重要地位。</p>
+                    <p>近代以来，随着现代书写工具的普及，徽墨制作一度衰落。但作为传统文化的重要组成部分，徽墨制作技艺受到国家保护，并不断创新发展，焕发出新的生机。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">制作工艺</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>原料选择</h5>
+                            <p>徽墨主要原料为松烟、油烟、胶料和香料。其中松烟取自松木燃烧后的烟灰，油烟则取自桐油或菜油燃烧后的烟灰。胶料多用桃胶、鹿角胶等，香料则根据不同品类选用龙脑、麝香、檀香等名贵香料。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>制作流程</h5>
+                            <p>徽墨制作包括"炼灰、淘灰、合胶、和墨、压模、雕刻、磨光、贴金"等多道工序，全程需历时一年以上。其中"和墨"最为关键，需反复揉捣数千次至数万次，直至墨料均匀细腻。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>装饰工艺</h5>
+                            <p>徽墨的装饰工艺丰富多样，包括雕刻、描金、贴金、嵌宝等。墨的表面常雕刻山水、花鸟、人物等图案，并辅以金粉、彩绘等装饰，使墨块既是书写工具，又是艺术品和收藏品。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">墨的种类</h3>
+                    <p><strong>松烟墨</strong>：以松木燃烧的烟灰为主要原料，墨色呈青黑色，发墨迅速，适合书法创作。</p>
+                    <p><strong>油烟墨</strong>：以桐油或菜油燃烧的烟灰为主要原料，墨色呈纯黑色，光泽度好，适合绘画创作。</p>
+                    <p><strong>混合墨</strong>：将松烟和油烟按一定比例混合，兼具两种墨的优点，是目前常见的徽墨种类。</p>
+                    <p><strong>香墨</strong>：在墨中加入各种名贵香料，研墨时散发香气，为书画增添雅致。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">著名墨厂和墨匠</h3>
+                    <p><strong>胡开文墨厂</strong>：始创于1667年，是中国历史最悠久的墨厂之一，至今仍在生产的老字号企业。</p>
+                    <p><strong>汪近圣</strong>：清代著名墨匠，其制作的"澄心堂墨"被誉为"天下第一墨"，技艺精湛，作品珍贵。</p>
+                    <p><strong>程义利</strong>：当代徽墨制作技艺国家级传承人，致力于徽墨传统工艺的传承与创新。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">传承与保护</h3>
+                    <p>为保护徽墨制作这一珍贵的文化遗产，安徽省成立了徽墨博物馆，并在歙县设立了徽墨制作传承基地。通过举办徽墨文化节、徽墨制作比赛等活动，吸引年轻一代参与徽墨的学习和传承。</p>
+                    <p>同时，徽墨制作不断创新，开发出具有现代审美特色的新产品，既保留了传统工艺的精髓，又适应了现代人的需求，推动徽墨文化的传承与发展。</p>
+                    <p>参观与购买：
+                    <ul>
+                        <li>徽墨博物馆：位于歙县，展示了徽墨的历史发展和制作工艺。</li>
+                        <li>胡开文墨厂：可参观制墨过程，并购买正宗徽墨产品。</li>
+                        <li>黄山市文化市场：有多家徽墨专卖店，提供各类徽墨产品。</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

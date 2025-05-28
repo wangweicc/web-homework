@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臭鳜鱼 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pictures/chouguiyu.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(3px);
+            min-height: 100%;
+            min-width: 100%;
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">臭鳜鱼</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/chouguiyu.jpg" alt="臭鳜鱼" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>臭鳜鱼是安徽省徽州地区（现黄山市）的传统名菜，属于徽菜系列，是中国八大菜系之一徽菜的代表作。其特点是"臭"而不腐，"闻着臭，吃着香"，让人回味无穷。</p>
+                    <p>臭鳜鱼选用鲜活的鳜鱼为原料，经过特殊工艺处理后，散发出特殊的"臭"味，但烹饪后鱼肉鲜嫩，风味独特，是安徽省最具代表性的传统美食之一。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史渊源</h3>
+                    <p>臭鳜鱼起源于清朝乾隆年间，据传最初是由徽州一位姓胡的厨师偶然发明的。当时一位厨师准备烹饪鳜鱼招待客人，但因客人来得较晚，鳜鱼已经放置时间过长，散发出轻微的臭味。</p>
+                    <p>无奈之下，这位厨师只能将这条鱼烹制，没想到烹饪后的鱼肉非常鲜美，甚至比新鲜烹制的更加美味。从此，这道"臭"而不腐、"臭"而香甜的鳜鱼美食便在徽州地区流传开来。</p>
+                    <p>如今，臭鳜鱼已成为安徽省非物质文化遗产，是徽菜中最具代表性的菜肴之一，在全国乃至世界范围内都享有盛誉。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">特色与制作</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>原料选择</h5>
+                            <p>臭鳜鱼的主要原料是鲜活的鳜鱼，一般选择2-3斤重的活鳜鱼。此外还需准备火腿、冬笋、木耳、香菇等配料，以及黄酒、酱油、醋、糖等调味品。鳜鱼选择非常重要，必须是新鲜的鳜鱼，肉质才会鲜嫩。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>制作工艺</h5>
+                            <p>臭鳜鱼的制作工艺独特，主要包括宰杀、发酵、煎制、烹饪四个步骤。其中最关键的是发酵过程，需将处理好的鳜鱼放置在室温下一定时间，使其产生特殊的香气。这个过程需要精确控制，时间过短不够香，时间过长则会腐败。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>口味特点</h5>
+                            <p>臭鳜鱼的最大特点是"闻着臭，吃着香"。其散发出的特殊气味让初次接触的人可能望而却步，但入口后却能感受到鱼肉的鲜嫩和浓郁的香气。烹饪好的臭鳜鱼色泽金黄，鱼肉细嫩，汤汁浓郁，口感丰富。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">烹饪技巧</h3>
+                    <p><strong>鱼的处理</strong>：鳜鱼宰杀后，需要去鳃、去内脏，但保留鱼鳞，这样有助于保持鱼肉的完整性。</p>
+                    <p><strong>发酵时间</strong>：根据季节不同，发酵时间也有所不同。夏季一般2-3小时，冬季可能需要5-6小时。发酵过程中要注意温度和湿度的控制。</p>
+                    <p><strong>火候掌握</strong>：煎鱼时需用旺火，使鱼表面迅速成型；烹制时则需用小火慢炖，使鱼肉充分入味。</p>
+                    <p><strong>配料搭配</strong>：传统臭鳜鱼会加入火腿、笋片等配料，既增加口感层次，又能中和鱼的腥味。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">地域特色</h3>
+                    <p>臭鳜鱼在安徽不同地区有着细微的差异。黄山地区的臭鳜鱼偏重原汁原味，多用清蒸或红烧的方式；歙县的臭鳜鱼则加入更多当地特产的火腿，风味更加浓郁；而屯溪一带的臭鳜鱼则注重汤汁的浓度，讲究"鱼肉嫩而不烂，汤汁浓而不腻"。
+                    </p>
+                    <p>不同地区的臭鳜鱼虽然在制作方法上有所不同，但都保持了臭鳜鱼"闻着臭，吃着香"的基本特点，体现了徽州菜的精髓。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">品尝指南</h3>
+                    <p>想要品尝正宗的臭鳜鱼，最好前往安徽省黄山市、歙县等徽州地区。在这些地方的传统徽菜馆，都能品尝到正宗的臭鳜鱼。</p>
+                    <p>推荐店铺：
+                    <ul>
+                        <li><strong>老街徽菜馆</strong>：位于黄山市屯溪老街，以传统工艺制作的臭鳜鱼最为著名，鱼肉鲜嫩，汤汁浓郁。</li>
+                        <li><strong>歙县胡氏宗祠饭店</strong>：以正宗的徽州臭鳜鱼闻名，保持了最传统的制作工艺。</li>
+                        <li><strong>黄山老舍饭店</strong>：位于黄山风景区附近，臭鳜鱼选用黄山本地山泉水中的鳜鱼，风味独特。</li>
+                    </ul>
+                    </p>
+                    <p>最佳品尝时间：春秋两季是品尝臭鳜鱼的最佳时节，此时的鳜鱼肉质最为鲜嫩，风味也最为浓郁。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

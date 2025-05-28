@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新安医学 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">新安医学</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/xinan-medicine.jpg" alt="新安医学典籍" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>新安医学，又称徽派医学，是中国传统医学的重要流派之一，源于安徽省徽州（今黄山市）地区，历史可追溯至唐宋时期，鼎盛于明清两代。</p>
+                    <p>新安医学集众家之长，融合多种医学理论和实践经验，形成了独特的理论体系和诊疗方法，在中医发展史上占有重要地位，被誉为与"温病学"并列的中医重要学术流派。2008年，新安医学被列入国家级非物质文化遗产名录。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史沿革</h3>
+                    <p>新安医学起源于唐宋时期的徽州地区，当时徽州已有较多医家和医著出现。至明清时期达到鼎盛，出现了大量著名医家和重要医著。</p>
+                    <p>新安地区自古人文荟萃，商业发达，为新安医学的发展提供了良好的社会环境和经济基础。徽商的发达促进了医药产业的繁荣，同时，徽州丰富的药材资源也为新安医学的发展提供了物质基础。</p>
+                    <p>清末民国时期，随着西医的传入和社会变革，新安医学也面临挑战和变革。现代以来，新安医学得到重视和保护，并不断与现代医学相结合，焕发出新的生机。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">学术特点</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>理论体系</h5>
+                            <p>新安医学注重"天人合一"的整体观念，强调人与自然的和谐统一。在病因病机理论上，注重外感六淫和内伤七情，并创造性地提出了"郁"是百病之源的理论。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>治疗特色</h5>
+                            <p>新安医学在治疗上主张"药简力专"，注重运用方剂治疗疾病，并有大量独特的验方秘方。同时，重视针灸、推拿等外治法的应用，形成了完整的治疗体系。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>药物研究</h5>
+                            <p>新安医学在药物研究方面成就显著，尤其在道地药材、药物炮制、药性理论等方面有独到见解。徽州盛产黄精、何首乌、石斛等名贵药材，为新安医学的药物应用提供了丰富资源。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">代表人物</h3>
+                    <p><strong>汪机（1463-1539）</strong>：明代著名医学家，著有《石山医案》《医学原理》等，对伤寒学说和温病学说有重要贡献。</p>
+                    <p><strong>吴崑（1551-1620）</strong>：明代医学家，著有《医方考》《脉语》等，在经方研究和脉学方面成就显著。</p>
+                    <p><strong>程钟龄（1563-1626）</strong>：明代医学家，著有《医学心悟》，对温病学说的发展有重要贡献。</p>
+                    <p><strong>汪昂（1615-1699）</strong>：清代著名医学家，著有《医方集解》《本草备要》等，对中药学和方剂学的发展有重要影响。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">代表著作</h3>
+                    <p><strong>《医学心悟》</strong>：程钟龄著，系统总结了明代医学理论和临床经验，对后世影响深远。</p>
+                    <p><strong>《医方集解》</strong>：汪昂著，收集整理了大量常用方剂，并对其组成、功效和应用进行了详细解说，是中医方剂学的重要著作。</p>
+                    <p><strong>《本草备要》</strong>：汪昂著，是一部药物学专著，对常用中药的性味、功效、应用等进行了系统总结。</p>
+                    <p><strong>《医学原理》</strong>：汪机著，系统阐述了中医基础理论，对经络、脏腑、病因病机等有独到见解。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">传承与发展</h3>
+                    <p>为了保护和传承新安医学这一珍贵的文化遗产，安徽省成立了新安医学研究所、新安医学博物馆等机构，并在安徽中医药大学设立了新安医学传承基地。</p>
+                    <p>同时，通过举办新安医学学术研讨会、培养新安医学传承人才等措施，推动新安医学的传承与创新发展。近年来，新安医学与现代医学的结合研究取得了一系列成果，为中医药的现代化发展提供了新思路。</p>
+                    <p>参观学习：
+                    <ul>
+                        <li>安徽中医药大学新安医学博物馆：位于合肥市，收藏了大量新安医学文献和实物。</li>
+                        <li>徽州中医药博物馆：位于黄山市，展示了新安医学的历史发展和学术成就。</li>
+                        <li>徽州古城：在一些旅游景点有新安医学文化展示，适合游客了解学习。</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

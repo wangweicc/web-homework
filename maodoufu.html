@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毛豆腐 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pictures/maodoufu.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(3px);
+            min-height: 100%;
+            min-width: 100%;
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">毛豆腐</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/maodoufu.jpg" alt="毛豆腐" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>毛豆腐是安徽省黄山市黟县的传统特色美食，属于徽菜系列。其外表生长着一层白色绒毛（实为霉菌），故名"毛豆腐"。这种特殊的发酵工艺赋予了豆腐独特的风味和口感。</p>
+                    <p>毛豆腐制作工艺独特，口味鲜美，是安徽徽州地区最具代表性的传统豆制品之一，被列入安徽省非物质文化遗产名录，享有"豆腐中的活化石"的美誉。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史渊源</h3>
+                    <p>毛豆腐的历史可以追溯到明朝末年，距今已有三百多年的历史。据传，毛豆腐源于黟县碧阳镇，最初是当地居民在寒冬储存豆腐时意外发现的。</p>
+                    <p>在当时物资匮乏的年代，人们为了储存食物，将豆腐放在竹篓中悬挂在通风处。几天后，豆腐表面长出了一层白色绒毛，但尝试食用后发现不仅没有变质，反而香味浓郁，别有风味。</p>
+                    <p>从此，这种特殊的制作工艺在当地传承下来，并逐渐发展成为今天的毛豆腐。如今，毛豆腐已经成为徽州地区特色美食，是游客到黟县必尝的当地特色。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">特色与制作</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>原料选择</h5>
+                            <p>毛豆腐的主要原料是优质的黄豆，通常选择颗粒饱满、质地均匀的本地黄豆。此外，还需要特殊的霉菌发酵剂（通常是上一批毛豆腐的"种子"）以及清洁的水源。原料的选择直接影响到毛豆腐的质量和口感。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>制作工艺</h5>
+                            <p>毛豆腐的制作工艺复杂，主要包括磨浆、点卤、压制、发酵四个步骤。其中最关键的是发酵过程，需将制好的豆腐放置在特定的环境中（温度约20-25℃，湿度70%-80%），让其自然发霉，这个过程通常需要3-5天。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>口味特点</h5>
+                            <p>毛豆腐最大的特点是"毛而不腐，臭而不馊"。经过发酵后的豆腐，外表长满白色绒毛，切开后内部呈乳白色，具有特殊的香气和微臭的风味。烹饪后的毛豆腐，外酥里嫩，香味浓郁，回味悠长。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">烹饪方法</h3>
+                    <p><strong>油炸毛豆腐</strong>：最传统的烹饪方式，将毛豆腐切成小块，裹上蛋液和面粉，油炸至金黄色，外酥里嫩，香气四溢。</p>
+                    <p><strong>红烧毛豆腐</strong>：将毛豆腐先油炸后红烧，加入葱姜蒜、辣椒等调料，炖煮入味，口感丰富多样。</p>
+                    <p><strong>毛豆腐锅贴</strong>：将毛豆腐与肉馅混合，包成饺子形状，煎至两面金黄，外脆内嫩，风味独特。</p>
+                    <p><strong>毛豆腐炒腊肉</strong>：将毛豆腐与当地特产的腊肉一起炒制，咸香扑鼻，是冬季的经典美食。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">营养价值</h3>
+                    <p>毛豆腐在发酵过程中，不仅保留了豆腐原有的蛋白质、钙质等营养成分，还通过微生物的作用产生了多种氨基酸和维生素。研究表明，毛豆腐含有丰富的蛋白质（高达15%以上）、钙、铁等矿物质以及多种B族维生素。
+                    </p>
+                    <p>此外，毛豆腐中的微生物发酵产物具有一定的保健功效，有助于促进消化，增强免疫力。传统中医认为，毛豆腐性平味甘，具有健脾开胃、助消化的功效。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">品尝指南</h3>
+                    <p>想要品尝正宗的毛豆腐，最好前往安徽省黟县碧阳镇。在当地的各个餐馆和小吃店，都能品尝到正宗的毛豆腐。</p>
+                    <p>推荐店铺：
+                    <ul>
+                        <li><strong>老街毛豆腐店</strong>：位于黟县碧阳老街，传承三代的老字号，以传统工艺制作的毛豆腐最为正宗。</li>
+                        <li><strong>王家毛豆腐</strong>：黟县知名毛豆腐制作世家，其制作的毛豆腐发酵适度，风味独特。</li>
+                        <li><strong>徽州风味馆</strong>：位于黄山风景区附近，提供多种毛豆腐菜品，可以一次品尝多种烹饪方式。</li>
+                    </ul>
+                    </p>
+                    <p>最佳品尝时间：每年11月至次年3月是品尝毛豆腐的最佳时节，此时气温适宜，毛豆腐的发酵效果最佳，风味也最为浓郁。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

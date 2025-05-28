@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>徽派建筑 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pictures/huipai.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(3px);
+            min-height: 100%;
+            min-width: 100%;
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">徽派建筑</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/huipai.jpg" alt="徽派建筑" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>徽派建筑是中国传统建筑的重要流派之一，主要分布在古徽州地区（今安徽省黄山市、宣城市部分地区及江西省上饶市的婺源县）。它以其独特的风格、精湛的工艺和深厚的文化内涵，成为中国古代建筑艺术的瑰宝。
+                    </p>
+                    <p>徽派建筑形成于宋代，发展于明清，至今已有800多年历史。2006年，徽派建筑营造技艺被列入第一批国家级非物质文化遗产名录。徽派建筑体现了中国传统文化中的"天人合一"理念，是徽州人文精神的物质载体，也是研究中国古代建筑史、艺术史的重要实物资料。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">建筑特色</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>马头墙</h5>
+                            <p>马头墙是徽派建筑最突出的特征，也称为"鞍墙"、"升火墙"。它高耸在房屋两侧，形如马头，兼具防火、防风和装饰功能。马头墙一般为阶梯状，层数为单数，通常为3层、5层或7层，层数越多，级别越高。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>精美雕刻</h5>
+                            <p>徽派建筑以其精美的雕刻艺术著称，主要包括砖雕、木雕、石雕三大类。这些雕刻题材丰富，技艺精湛，多取材于传统戏曲、神话传说、历史故事、花鸟虫鱼等。其中，门楼、厅堂、屏风上的雕刻尤为精美，被誉为"无梁不雕，无木不刻"。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>天井与水系</h5>
+                            <p>徽派建筑注重"藏风聚气"，多采用"四水归堂"的格局，即屋顶四角的雨水通过天井汇集到院落中心。天井不仅有利于采光通风，还能收集雨水，形成完整的水系统，体现了徽州人的生态智慧。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">建筑类型</h3>
+                    <p><strong>民居：</strong>徽派民居多为二层或三层木结构建筑，前低后高，呈"一"字形、"四"字形或"回"字形布局。大户人家的民居通常是前堂后厅，左右厢房，中间天井，形成封闭的院落空间。著名的如宏村的承志堂、西递的敬修堂等。
+                    </p>
+                    <p><strong>祠堂：</strong>祠堂是徽州宗族聚居的精神中心，用于祭祀祖先、议事和教育子弟。徽派祠堂建筑宏伟，布局严谨，装饰华丽，多采用"一进三厅"或"三进五厅"的格局。著名的如歙县的鲍家祠、休宁的汪氏宗祠等。
+                    </p>
+                    <p><strong>牌坊：</strong>徽派牌坊是徽州地区特有的建筑形式，用于表彰功德或纪念人物。徽派牌坊一般由台基、柱子、横梁、额枋、屋顶等部分组成，造型优美，雕刻精细。著名的如歙县的许国牌坊、棠樾牌坊等。
+                    </p>
+                    <p><strong>园林：</strong>徽派园林讲究"借景"，即借用周围山水作为园林背景。园内设计强调"曲径通幽"，通过亭台楼阁、小桥流水等营造自然雅致的环境。著名的如歙县的徽州府衙后花园、黟县的退思园等。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">文化内涵</h3>
+                    <p>徽派建筑不仅是一种建筑形式，更是徽州文化的重要载体，蕴含着丰富的文化内涵。</p>
+                    <p><strong>儒家思想：</strong>徽派建筑布局严谨，秩序分明，体现了儒家"礼制"思想。从房屋的坐向、格局到装饰雕刻，都严格遵循等级秩序，如正房为主，厢房为辅；上方为尊，下方为卑等。
+                    </p>
+                    <p><strong>商业文化：</strong>徽商是中国古代著名的商帮之一，徽派建筑的兴起与徽商的繁荣密不可分。徽商在外经商致富后，往往回乡修建宏伟的宅第，以彰显家族荣耀。因此，徽派建筑中处处可见商业文化的影响。
+                    </p>
+                    <p><strong>风水观念：</strong>徽州人非常重视风水，徽派建筑的选址、布局都考虑到风水因素。如"前山后水"、"左青龙右白虎"等风水理念在徽派建筑中得到充分体现。</p>
+                    <p><strong>环保理念：</strong>徽派建筑注重与自然和谐共处，采用天然材料，如木材、石材、青砖等；同时，通过合理设计，达到节能环保的效果，如利用天井采光通风、收集雨水等。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">代表性建筑</h3>
+                    <p><strong>宏村承志堂：</strong>位于黄山市黟县宏村，建于清代，是宏村最大的民居，也是徽派建筑的杰出代表。整个建筑布局严谨，装饰精美，木雕、砖雕、石雕俱佳，尤以"三雕"工艺著称。
+                    </p>
+                    <p><strong>西递敬修堂：</strong>位于黄山市黟县西递村，建于明代，是徽派建筑的典型代表。敬修堂布局合理，雕刻精美，尤以"灵芝纹"木雕闻名，展示了徽派建筑的艺术魅力。</p>
+                    <p><strong>徽州古城：</strong>位于黄山市徽州区，保存有大量明清时期的徽派建筑，包括民居、祠堂、牌坊等。古城内有"一溪两塔三阁四牌坊"等著名景观，是了解徽派建筑和徽州文化的重要场所。
+                    </p>
+                    <p><strong>芜湖鸠兹古镇：</strong>位于安徽省芜湖市，是一座以徽派建筑为主的古镇。镇内有大量保存完好的明清徽派建筑，如鸠兹会馆、程氏宗祠等，展示了徽派建筑的艺术风采。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">参观指南</h3>
+                    <p>如果您想亲身感受徽派建筑的魅力，以下是几个推荐的参观地点：</p>
+                    <ul>
+                        <li><strong>宏村古村落：</strong>世界文化遗产，保存有大量明清徽派建筑，如承志堂、南湖书院等。</li>
+                        <li><strong>西递古村落：</strong>世界文化遗产，有"活的古建筑博物馆"之称，保存有99幢明清古民居。</li>
+                        <li><strong>歙县古城：</strong>徽州文化的发源地，有大量徽派建筑，如鲍家花园、许国石坊等。</li>
+                        <li><strong>黟县碧山村：</strong>保存完好的徽派古村落，建筑风格纯正，游客较少，可以静心欣赏徽派建筑之美。</li>
+                        <li><strong>婺源县：</strong>虽然行政上属于江西省，但文化上属于徽州，有大量徽派建筑，如江湾、理坑等古村落。</li>
+                    </ul>
+                    <p>最佳参观时间：四季皆宜，春季油菜花盛开，秋季层林尽染，都是欣赏徽派建筑的好时节。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

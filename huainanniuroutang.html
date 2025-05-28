@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淮南牛肉汤 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pictures/huainanniuroutang.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(3px);
+            min-height: 100%;
+            min-width: 100%;
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">淮南牛肉汤</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/huainanniuroutang.jpg" alt="淮南牛肉汤" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>淮南牛肉汤是安徽省淮南市的传统特色美食，有着近百年的历史，是淮南市的城市名片。其以牛肉质地鲜嫩、汤底清澈、味道鲜美而闻名，被誉为"中国十大名汤"之一。</p>
+                    <p>淮南牛肉汤以选料精良、工艺考究著称，汤色清澈见底，肉质鲜嫩，配以特制的扁面条，鲜香可口，被广大食客所喜爱，是安徽地区具有代表性的传统美食。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史渊源</h3>
+                    <p>淮南牛肉汤起源于20世纪20年代，由淮南老八集镇一位姓张的商人所创。据传，当时张姓商人经营牛肉生意，为了不浪费煮牛肉的汤水，尝试加入面条食用，没想到味道鲜美，于是开始专门制作牛肉汤面。</p>
+                    <p>最初的淮南牛肉汤店是在淮南市老八集附近开设的，随后逐渐在淮南地区流传开来。上世纪50年代，随着淮南煤炭工业的发展，淮南牛肉汤作为当地工人喜爱的美食，进一步普及和发展。</p>
+                    <p>如今，淮南牛肉汤已成为安徽省的知名特色美食，在全国许多城市都能看到淮南牛肉汤的连锁店，成为淮南市对外宣传的重要名片。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">特色与制作</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>原料选择</h5>
+                            <p>淮南牛肉汤的主要原料是优质的牛肉（多选用牛腱子肉、牛腩等部位）和特制的面条。此外还需要准备香菜、葱花、蒜苗、辣椒油等配料，以及多种香料如桂皮、八角、香叶等。牛肉的选择尤为重要，必须选用新鲜的牛肉，肉质才会鲜嫩。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>制作工艺</h5>
+                            <p>淮南牛肉汤的制作工艺独特，主要包括熬汤、煮肉、制面、配料四个步骤。其中最关键的是熬汤，需将牛骨、牛腱等放入锅中加水慢火熬制4-6小时，期间不断除去浮油和杂质，确保汤底清澈。煮肉也需要掌握火候，以保证肉质鲜嫩不柴。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>口味特点</h5>
+                            <p>淮南牛肉汤最大的特点是"汤清肉嫩，醇香不腻"。汤色清澈见底，肉质鲜嫩，汤味醇厚但不油腻。面条多为手工制作的扁宽面，筋道爽滑，与牛肉汤完美搭配。食用时配以香菜、葱花、辣椒油等，香气四溢，回味无穷。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">独特之处</h3>
+                    <p><strong>汤底秘方</strong>：正宗的淮南牛肉汤汤底采用多种香料熬制，配方各家略有不同，但都有独特的香气，这是区别于其他牛肉汤的重要特点。</p>
+                    <p><strong>切肉技艺</strong>：牛肉的切法也是一门讲究的技艺，需要顺着肉纹切成薄片，这样煮出来的肉才会更加鲜嫩。</p>
+                    <p><strong>面条特色</strong>：淮南牛肉汤的面条多为手工制作的扁宽面，有别于其他地区的牛肉面，这种面条吃起来更有嚼劲，更能吸收汤汁的鲜味。</p>
+                    <p><strong>吃法讲究</strong>：正宗的淮南牛肉汤讲究"汤在先，面在后"，先喝一口清汤，再品尝牛肉和面条，这样才能充分感受其美味。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">文化价值</h3>
+                    <p>淮南牛肉汤不仅是一种美食，更承载着淮南地区的历史文化。它见证了淮南从小镇到工业城市的发展历程，也反映了当地居民的生活习惯和饮食文化。</p>
+                    <p>每年的淮南美食节上，淮南牛肉汤都是重要的展示项目，吸引了众多游客前来品尝。此外，淮南市还积极推动淮南牛肉汤的文化传承和产业化发展，使其成为地方特色文化的重要组成部分。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">品尝指南</h3>
+                    <p>想要品尝正宗的淮南牛肉汤，最好前往安徽省淮南市。在当地的老字号牛肉汤店，能品尝到最地道的淮南牛肉汤。</p>
+                    <p>推荐店铺：
+                    <ul>
+                        <li><strong>张记老街牛肉汤</strong>：位于淮南市田家庵区，创始于1954年，是当地最有名的牛肉汤老店之一，汤底清澈，牛肉鲜嫩，深受食客喜爱。</li>
+                        <li><strong>老八集牛肉汤</strong>：位于淮南市老八集，是淮南牛肉汤的发源地之一，保持着最传统的制作工艺。</li>
+                        <li><strong>淮南牛肉汤博物馆</strong>：位于淮南市田家庵区，不仅可以品尝正宗的淮南牛肉汤，还可以了解其历史文化和制作工艺。</li>
+                    </ul>
+                    </p>
+                    <p>最佳品尝时间：四季皆宜，但冬季尤为适合，一碗热气腾腾的牛肉汤，既暖胃又暖心。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

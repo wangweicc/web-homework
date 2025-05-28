@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>美食安徽 - 大美安徽</title>
+    <title>三河米饺 - 大美安徽</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
     <style>
@@ -40,18 +40,13 @@
             border-radius: 2px;
         }
 
-        .food-card {
+        .detail-card {
             background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
             border-radius: 18px;
             box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
             padding: 32px 28px;
             margin-bottom: 32px;
             transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .food-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 16px 32px rgba(45, 95, 42, 0.18);
         }
 
         footer {
@@ -68,24 +63,6 @@
             box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-        }
-
-        .h1,
-        .h2,
-        .h3,
-        .h4,
-        .h5,
-        .h6,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-top: 0;
-            margin-bottom: .5rem;
-            font-weight: 500;
-            line-height: 1.5;
         }
 
         .nav-btn {
@@ -107,6 +84,12 @@
             color: #fff !important;
             box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
             border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
         }
     </style>
 </head>
@@ -141,77 +124,102 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <h2 class="section-title text-center mt-5 pt-5" data-aos="fade-up" style="color:#2d5f2a;">美食安徽</h2>
-        <div class="row justify-content-center mt-4" style="gap: 24px;">
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="chouguiyu.html" class="text-decoration-none w-100">
-                    <div class="food-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/chouguiyu.jpg" alt="臭鳜鱼"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">臭鳜鱼</h5>
-                    </div>
-                </a>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">三河米饺</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/sanhemijiao.jpg" alt="三河米饺" class="feature-img mb-4">
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="maodoufu.html" class="text-decoration-none w-100">
-                    <div class="food-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/maodoufu.jpg" alt="毛豆腐"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">毛豆腐</h5>
-                    </div>
-                </a>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>三河米饺是安徽省芜湖市三河古镇的传统特色小吃，历史悠久，距今已有600多年历史。因外形酷似北方的饺子，但主要原料是糯米粉，故名"米饺"。</p>
+                    <p>三河米饺以其独特的制作工艺和鲜美的口味在当地广受欢迎，是安徽省著名的传统小吃之一。它不仅是当地人日常生活中的美食，也是游客到三河古镇必尝的特色美食。</p>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="sanhemijiao.html" class="text-decoration-none w-100">
-                    <div class="food-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/sanhemijiao.jpg" alt="三河米饺"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">三河米饺</h5>
-                    </div>
-                </a>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史渊源</h3>
+                    <p>三河米饺起源于明朝初期，据传是为纪念郑和下西洋而创制的。当时郑和下西洋前往三河镇采购物资，当地人为了表达敬意，特意制作了这种形似船帆的米饺招待郑和一行。</p>
+                    <p>三河米饺最初是作为祭祀用品，后来逐渐发展成为当地人日常生活中的美食。明清时期，三河米饺已在当地广为流传，成为当地的传统特色小吃。</p>
+                    <p>如今，三河米饺已成为安徽省非物质文化遗产，其制作技艺得到了很好的传承和保护。每年农历五月初五端午节期间，三河古镇都会举办米饺节，吸引众多游客前来品尝。</p>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="jixitaguo.html" class="text-decoration-none w-100">
-                    <div class="food-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/jixitaguo.jpg" alt="绩溪挞粿"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">绩溪挞粿</h5>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">特色与制作</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>原料选择</h5>
+                            <p>三河米饺的主要原料是优质糯米粉和面粉，以及各种馅料，如猪肉、萝卜、芹菜、冬笋等。在制作过程中，原料的选择非常讲究，必须使用优质的糯米和新鲜的蔬菜肉类。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>制作工艺</h5>
+                            <p>三河米饺的制作工艺独特，主要包括和面、调馅、包饺、煮饺四道工序。其中最关键的是和面，需将糯米粉和面粉按一定比例混合，再加入适量热水搅拌，反复揉搓至柔软光滑。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>口味特点</h5>
+                            <p>三河米饺以皮薄馅多、软糯鲜香而著称。其皮因加入糯米粉而具有一定韧性和弹性，煮熟后不易破裂；馅料丰富多样，荤素搭配，味道鲜美；食用时蘸以特制的辣椒油和醋，更增风味。</p>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="huainanniuroutang.html" class="text-decoration-none w-100">
-                    <div class="food-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/huainanniuroutang.jpg" alt="淮南牛肉汤"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">淮南牛肉汤</h5>
-                    </div>
-                </a>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">经典馅料</h3>
+                    <p><strong>猪肉萝卜馅</strong>：传统经典馅料，肥瘦猪肉搭配萝卜丝，肉香萝卜鲜，是三河米饺最受欢迎的馅料。</p>
+                    <p><strong>猪肉芹菜馅</strong>：猪肉与芹菜的完美结合，芹菜的清香与猪肉的鲜美相得益彰，风味独特。</p>
+                    <p><strong>鲜肉冬笋馅</strong>：利用当地盛产的冬笋与猪肉搭配，口感脆嫩，鲜香可口。</p>
+                    <p><strong>三鲜馅</strong>：虾仁、鲜肉、香菇混合制成，鲜味浓郁，是高档宴席上的常见馅料。</p>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="banmian.html" class="text-decoration-none w-100">
-                    <div class="food-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/banmian.jpg" alt="板面"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">板面</h5>
-                    </div>
-                </a>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">食用方式</h3>
+                    <p>三河米饺主要有煮、蒸两种烹饪方式，以煮食为主。煮熟的米饺晶莹剔透，软糯Q弹。食用时，通常配以特制的辣椒油和陈醋蘸食，增添风味。</p>
+                    <p>在三河古镇，米饺不仅是日常小吃，也是节庆宴席上的重要菜品。特别是在端午节期间，几乎家家户户都会制作米饺，既可自食，也可送亲赠友，表达美好祝愿。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">品尝指南</h3>
+                    <p>想要品尝正宗的三河米饺，最好前往芜湖市三河古镇。在三河古镇的各个小吃店和餐馆，都能品尝到正宗的三河米饺。</p>
+                    <p>推荐店铺：
+                    <ul>
+                        <li><strong>老街米饺店</strong>：位于三河古镇老街中段，历史悠久，制作工艺传统，口味地道。</li>
+                        <li><strong>王记米饺</strong>：三河古镇知名米饺店，以馅料丰富、皮薄馅多而著名。</li>
+                        <li><strong>三河米饺博物馆</strong>：不仅可以了解米饺的历史文化，还可以现场品尝新鲜制作的米饺。</li>
+                    </ul>
+                    </p>
+                    <p>最佳品尝时间：每年农历五月初五端午节期间，三河古镇举办的米饺节，是品尝各种口味米饺的最佳时机。</p>
+                </div>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="container text-center">
             <p>&copy; 2025 大美安徽文化旅游网</p>
             <p>皖ICP备12345678号</p>
         </div>
     </footer>
+
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>

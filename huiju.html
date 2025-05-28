@@ -4,13 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>人文安徽 - 大美安徽</title>
+    <title>徽剧 - 大美安徽</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
     <style>
         body {
             font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
             background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pictures/huiju.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(3px);
+            min-height: 100%;
+            min-width: 100%;
         }
 
         .container {
@@ -40,18 +58,13 @@
             border-radius: 2px;
         }
 
-        .culture-card {
+        .detail-card {
             background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
             border-radius: 18px;
             box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
             padding: 32px 28px;
             margin-bottom: 32px;
             transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .culture-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 16px 32px rgba(45, 95, 42, 0.18);
         }
 
         footer {
@@ -68,24 +81,6 @@
             box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-        }
-
-        .h1,
-        .h2,
-        .h3,
-        .h4,
-        .h5,
-        .h6,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-top: 0;
-            margin-bottom: .5rem;
-            font-weight: 500;
-            line-height: 1.5;
         }
 
         .nav-btn {
@@ -107,6 +102,12 @@
             color: #fff !important;
             box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
             border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
         }
     </style>
 </head>
@@ -141,77 +142,98 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <h2 class="section-title text-center mt-5 pt-5" data-aos="fade-up" style="color:#2d5f2a;">人文安徽</h2>
-        <div class="row justify-content-center mt-4" style="gap: 24px;">
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="huiju.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/huiju.jpg" alt="徽剧"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">徽剧</h5>
-                    </div>
-                </a>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">徽剧</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/huiju.jpg" alt="徽剧表演" class="feature-img mb-4">
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="xinan-medicine.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/xinan-medicine.jpg" alt="新安医学"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">新安医学</h5>
-                    </div>
-                </a>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>徽剧，原名徽池雅调，是中国传统戏曲剧种之一，主要流行于安徽、江苏、浙江等地。徽剧起源于明代中叶，形成于清代，是中国最古老的戏曲剧种之一，被誉为"百戏之祖"。</p>
+                    <p>徽剧以其独特的表演风格、精湛的表演技艺和丰富的剧目内容在中国戏曲史上占有重要地位。2006年，徽剧被列入第一批国家级非物质文化遗产名录。</p>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="huipai.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/huipai.jpg" alt="徽派建筑"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">徽派建筑</h5>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">艺术特色</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>唱腔特点</h5>
+                            <p>徽剧唱腔委婉动听，以二黄、西皮为主，兼有高腔、昆腔等。唱腔特点为"字正腔圆、行腔流畅、韵味醇厚"，表现力丰富，能够充分展现人物的内心情感。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>表演风格</h5>
+                            <p>徽剧表演注重程式化，强调身段优美，动作规范，以"亮相"最为著名。表演中讲究"眼到、手到、身到、步到"，追求形神兼备，表演细腻传神。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>行当设置</h5>
+                            <p>徽剧行当齐全，有生、旦、净、丑四大行当，其中"老生"和"花脸"尤为有特色。徽剧表演重视"做功"，强调各行当的特点鲜明，人物形象丰满。</p>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="huimo.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/huimo.jpg" alt="徽墨制作技艺"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">徽墨制作技艺</h5>
-                    </div>
-                </a>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">代表剧目</h3>
+                    <p><strong>《徽州女人》</strong>：描述徽州妇女在家中持家、守业的故事，展现了徽州女性的坚韧品格和传统美德。</p>
+                    <p><strong>《琴童》</strong>：讲述了一个音乐神童的成长故事，表现了艺术追求和人生价值的思考。</p>
+                    <p><strong>《女驸马》</strong>：经典传统剧目，讲述冯素贞女扮男装、代夫从军的故事，情节曲折动人。</p>
+                    <p><strong>《状元与乞丐》</strong>：通过状元和乞丐的命运对比，反映了封建社会的不平等和人生的无常。</p>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="sheyan.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/sheyan.jpg" alt="歙砚"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">歙砚</h5>
-                    </div>
-                </a>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史发展</h3>
+                    <p>徽剧源于明代中叶安徽徽州一带的民间戏曲，初名"徽调"或"徽腔"。清代乾隆年间，徽班进京，对京剧的形成产生了重要影响，有"徽班进京，京剧形成"之说。</p>
+                    <p>随着时代的变迁，徽剧经历了多次改革和创新。现代徽剧在保留传统艺术特色的同时，也融入了现代表演元素，不断创作出适应时代需求的新剧目。</p>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="huangmeixi.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/huangmeixi.jpg" alt="黄梅戏"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">黄梅戏</h5>
-                    </div>
-                </a>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">传承与保护</h3>
+                    <p>为了保护和传承徽剧这一珍贵的文化遗产，安徽省成立了徽剧研究所、徽剧博物馆等机构，并设立了徽剧传承基地。同时，通过举办徽剧艺术节、徽剧表演大赛等活动，吸引年轻一代参与徽剧的学习和传承。</p>
+                    <p>近年来，徽剧也积极"走出去"，通过国际文化交流活动向世界展示中国传统戏曲艺术的魅力，获得了国际社会的广泛关注和好评。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">观赏指南</h3>
+                    <ul>
+                        <li>安徽省徽剧院：位于合肥市，是欣赏正宗徽剧表演的最佳场所。</li>
+                        <li>黄山市徽剧团：在黄山市区和黟县等地经常有演出。</li>
+                        <li>徽州古城：在一些旅游景点有专门的徽剧表演，适合游客观赏。</li>
+                        <li>每年农历正月十五前后，安徽省会举办徽剧艺术节，是观赏徽剧的好时机。</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="container text-center">
             <p>&copy; 2025 大美安徽文化旅游网</p>
             <p>皖ICP备12345678号</p>
         </div>
     </footer>
+
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>

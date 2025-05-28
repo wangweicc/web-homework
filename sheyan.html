@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歙砚 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">歙砚</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/sheyan.jpg" alt="歙砚" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>歙砚是中国四大名砚之一，产于安徽省黄山市歙县，有着悠久的历史和精湛的制作工艺。"歙砚"因产地而得名，是中国文房四宝（笔、墨、纸、砚）之一，被誉为"砚中之冠"。</p>
+                    <p>歙砚起源于唐代，盛于宋元，历经千年而不衰。2006年，歙砚制作技艺被列入第一批国家级非物质文化遗产名录。歙砚不仅是实用的文房用具，也是精美的艺术品，凝聚着中国传统文化的精髓，是中华民族宝贵的文化遗产。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">歙砚特点</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>质地坚硬</h5>
+                            <p>歙砚用料以青绿色、灰褐色的泥晶石为主，石质细腻坚硬，密度适中，不吸水不渗水，能使墨汁均匀地摊铺在砚面上，研磨出的墨色醇厚持久，有"石坚墨润"之称。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>纹理独特</h5>
+                            <p>歙砚石材纹理多变，有"松花坑""鱼子坑""卧子坑""罗纹坑"等多种类型，其中以"松花坑"最为名贵，其纹理如梅花雪片，星星点点，晶莹剔透，被誉为"砚中之王"。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>工艺精湛</h5>
+                            <p>歙砚制作工艺复杂，需经过选料、开坯、粗琢、精雕、打磨、装镶等多道工序，每一步都需要匠人精益求精。尤其是雕刻工艺，题材丰富，技法多样，将实用性和艺术性完美结合。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史渊源</h3>
+                    <p>歙砚的历史可以追溯到唐代。唐朝著名文学家李肇在《国史补》中记载："砚出于歙州，其石色紫黑，光泽如漆，号歙州石子。"这是对歙砚最早的文字记载。</p>
+                    <p><strong>唐代初创：</strong>唐代，歙州（今歙县）开始开采砚石，制作砚台，歙砚初具规模。</p>
+                    <p><strong>宋代繁荣：</strong>宋代是歙砚发展的黄金时期，当时徽州文化兴盛，科举制度完善，对文房用品需求增加，促进了歙砚的发展。北宋欧阳修曾写《谢人惠歙州砚》一诗，赞美歙砚的品质。
+                    </p>
+                    <p><strong>明清鼎盛：</strong>明清时期，歙砚制作技艺更加精湛，出现了许多名家名作。如明代的程君房、吴廷尉，清代的胡开文、汪近圣等，他们的作品流传至今，成为珍贵的文物。</p>
+                    <p><strong>近现代传承：</strong>近现代以来，歙砚制作依然兴盛。1956年，成立了歙县砚雕厂，集中了一批优秀的砚雕艺人，进一步规范和提高了歙砚的制作水平。改革开放后，歙砚走向国际，成为中国文化的重要使者。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">制作工艺</h3>
+                    <p>歙砚的制作是一项复杂而精细的工艺，需要经过多道工序，每一步都要求匠人精益求精。</p>
+                    <p><strong>选料：</strong>选择优质的歙砚石材是制作歙砚的第一步。好的砚石应该质地坚硬、细腻、不吸水、不渗水，且纹理美观。根据不同的纹理和质地，分为松花坑、鱼子坑、罗纹坑等多种类型。
+                    </p>
+                    <p><strong>开坯：</strong>用锯子将大块砚石切割成适当大小的砚坯，这一步需要准确判断石材的纹理走向，以便充分展示石材的美感。</p>
+                    <p><strong>粗琢：</strong>用凿子和锤子将砚坯粗略地琢出砚台的基本形状，包括砚身、砚池、砚背等部分。</p>
+                    <p><strong>精雕：</strong>这是歙砚制作中最关键的一步，需要运用多种雕刻技法，如浮雕、透雕、镂雕、阴刻、阳刻等，将各种图案和文字雕刻在砚台上。题材多取自传统文化，如山水、花鸟、人物、龙凤等。
+                    </p>
+                    <p><strong>打磨：</strong>用砂纸或磨石对砚台进行细致打磨，使其表面光滑平整。这一步需要耐心和细心，要确保砚面无划痕，手感舒适。</p>
+                    <p><strong>装镶：</strong>有些高档歙砚会在边缘装镶金、银、铜等金属材料，或者镶嵌玉石、宝石等，增加砚台的艺术价值和装饰效果。</p>
+                    <p><strong>上漆：</strong>最后，在砚台表面涂上一层特制的漆，既能保护砚台，又能增加其光泽和美感。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">著名品种</h3>
+                    <p><strong>松花坑砚：</strong>是歙砚中的上品，石质坚细，砚面呈黑色，带有星星点点的白色斑点，如雪花落在松林中，故名"松花"。松花坑砚研墨细腻，发墨快，墨色浓重持久，是文人墨客最喜爱的砚种。
+                    </p>
+                    <p><strong>鱼子坑砚：</strong>砚面呈褐黑色，布满细小的白色圆点，状如鱼子，故名。鱼子坑砚石质细腻，研墨性能良好，是仅次于松花坑的名贵砚种。</p>
+                    <p><strong>罗纹坑砚：</strong>砚面呈青灰色，有如罗网般的纹理，故名。罗纹坑砚研墨性能也很好，是实用性较强的砚种。</p>
+                    <p><strong>卧子坑砚：</strong>砚面呈黑色，有较大的白色斑点，状如卧着的种子，故名。卧子坑砚质地坚硬，研墨性能优良，但产量较少，较为珍贵。</p>
+                    <p><strong>古坑砚：</strong>是从古墓或古建筑中出土的歙砚，因年代久远，往往有特殊的文物价值，被收藏家视为珍品。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">参观与收藏</h3>
+                    <p>如果您对歙砚感兴趣，以下是一些参观和收藏的建议：</p>
+                    <ul>
+                        <li><strong>歙县歙砚博物馆：</strong>位于安徽省黄山市歙县，是专门展示歙砚历史、文化和艺术的博物馆，馆内收藏了大量珍贵的歙砚作品。</li>
+                        <li><strong>胡开文墨厂：</strong>位于安徽省黄山市歙县，是中国著名的老字号企业，不仅生产徽墨，也有歙砚展示和销售。</li>
+                        <li><strong>徽州古城：</strong>位于安徽省黄山市徽州区，有许多传统手工艺品店，可以购买到正宗的歙砚。</li>
+                        <li><strong>收藏建议：</strong>收藏歙砚应注意选择正规渠道购买，关注砚石质地、纹理、工艺等方面，初学者可从实用型歙砚开始，逐步了解歙砚文化，再进入收藏领域。</li>
+                        <li><strong>使用保养：</strong>歙砚虽然坚硬耐用，但也需要适当保养。使用后应清洗干净，晾干后存放在干燥通风处，避免阳光直射和剧烈温度变化，定期用清水擦拭以保持光泽。
+                        </li>
+                    </ul>
+                    <p>歙砚作为中国传统文化的瑰宝，不仅是实用的文房用具，也是精美的艺术品和收藏品，值得我们去了解、欣赏和传承。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

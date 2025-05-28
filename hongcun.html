@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>人文安徽 - 大美安徽</title>
+    <title>宏村 - 大美安徽</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
     <style>
@@ -40,18 +40,13 @@
             border-radius: 2px;
         }
 
-        .culture-card {
+        .detail-card {
             background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
             border-radius: 18px;
             box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
             padding: 32px 28px;
             margin-bottom: 32px;
             transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .culture-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 16px 32px rgba(45, 95, 42, 0.18);
         }
 
         footer {
@@ -68,24 +63,6 @@
             box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-        }
-
-        .h1,
-        .h2,
-        .h3,
-        .h4,
-        .h5,
-        .h6,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-top: 0;
-            margin-bottom: .5rem;
-            font-weight: 500;
-            line-height: 1.5;
         }
 
         .nav-btn {
@@ -108,6 +85,12 @@
             box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
             border: 1.5px solid #2d5f2a;
         }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
     </style>
 </head>
 
@@ -122,8 +105,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
-                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
-                    <li class="nav-item"><a class="nav-link nav-btn active" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="culture.html">人文安徽</a></li>
                     <li class="nav-item"><a class="nav-link nav-btn" href="food.html">美食安徽</a></li>
                     <li class="nav-item" id="login-nav-item">
                         <a class="nav-link nav-btn" href="login.html">登录/注册</a>
@@ -141,77 +124,77 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <h2 class="section-title text-center mt-5 pt-5" data-aos="fade-up" style="color:#2d5f2a;">人文安徽</h2>
-        <div class="row justify-content-center mt-4" style="gap: 24px;">
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="huiju.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/huiju.jpg" alt="徽剧"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">徽剧</h5>
-                    </div>
-                </a>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">宏村</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/hongcun.jpg" alt="宏村全景" class="feature-img mb-4">
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="xinan-medicine.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/xinan-medicine.jpg" alt="新安医学"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">新安医学</h5>
-                    </div>
-                </a>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>宏村位于安徽省黄山市黟县，是中国传统古村落和文化遗产。1997年12月被列入第四批全国重点文物保护单位名单，2000年11月30日被联合国教科文组织列入《世界遗产名录》。</p>
+                    <p>宏村始建于南宋绍兴年间（公元1131年—1162年），现存明清建筑140余幢，建筑面积大，装饰精美，雕刻华丽。村中水系贯通，依山就势，人为巧合，形成月沼、南湖人工水系景观。全村建筑依山傍水、疏密有致，与青山、绿水融为一体，被称为"中国画里的乡村"。
+                    </p>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="huipai.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/huipai.jpg" alt="徽派建筑"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">徽派建筑</h5>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">著名景点</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>月沼</h5>
+                            <p>月沼是宏村人工开凿的水池，形状似月牙，四季不涸，环沼修建有石阶，可供行人行走休憩。沼内荷花点点，假山矗立，水中常有鱼游，是宏村一大特色景观。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>南湖</h5>
+                            <p>南湖是宏村又一水系景观，湖面宽阔，周围建有亭台，是游人休闲观景的好去处。湖水清澈，倒映着周围的古建筑，宛如一幅水墨画。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>承志堂</h5>
+                            <p>承志堂是宏村最大的一座古民居，建于清代，是一座富丽堂皇的徽派建筑，内有精美的木雕、石雕和砖雕，展示了徽派建筑的精湛工艺。</p>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="huimo.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/huimo.jpg" alt="徽墨制作技艺"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">徽墨制作技艺</h5>
-                    </div>
-                </a>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">交通指南</h3>
+                    <p><strong>自驾路线：</strong>从黄山市区出发，沿205国道向西，经屯溪、黟县，到达宏村，全程约75公里。</p>
+                    <p><strong>公共交通：</strong>从黄山北站或黄山站乘坐直达宏村的旅游专线车，或在黄山汽车站乘坐到黟县的班车，再转乘到宏村的中巴车。</p>
+                </div>
             </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="sheyan.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/sheyan.jpg" alt="歙砚"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">歙砚</h5>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 d-flex justify-content-center" data-aos="fade-up">
-                <a href="huangmeixi.html" class="text-decoration-none w-100">
-                    <div class="culture-card p-0 d-flex flex-column align-items-center justify-content-center"
-                        style="aspect-ratio: 1/1;cursor:pointer;">
-                        <img src="pictures/huangmeixi.jpg" alt="黄梅戏"
-                            style="width:100%;height:70%;object-fit:cover;border-radius:18px 18px 0 0;">
-                        <h5 class="mt-3 mb-0 text-center" style="font-size:1.3rem;line-height:1.5;">黄梅戏</h5>
-                    </div>
-                </a>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">旅游贴士</h3>
+                    <ul>
+                        <li>最佳旅游季节：四季皆宜，春秋季节气候宜人，景色最佳。</li>
+                        <li>门票信息：门票104元/人，学生半价，需提前预约。</li>
+                        <li>开放时间：8:00-17:30（旺季可能延长）。</li>
+                        <li>建议游览时间：1-2天。</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="container text-center">
             <p>&copy; 2025 大美安徽文化旅游网</p>
             <p>皖ICP备12345678号</p>
         </div>
     </footer>
+
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>

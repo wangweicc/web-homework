@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天柱山 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pictures/tianzhushan.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(3px);
+            min-height: 100%;
+            min-width: 100%;
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">天柱山</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/tianzhushan.jpg" alt="天柱山全景" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>天柱山位于安徽省安庆市潜山市境内，是国家5A级旅游景区，国家重点风景名胜区，是我国著名的道教名山和避暑胜地。天柱山主峰天柱峰海拔1488.4米，为长江以南第一高峰。</p>
+                    <p>天柱山因山形如擎天之柱而得名，其"六奇、六绝、六景"享誉华夏。山上林木葱郁，云雾缭绕，山水相映，风光旖旎，被誉为"江南第一奇秀山"，是皖西南地区的标志性景观。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">著名景点</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>天柱峰</h5>
+                            <p>天柱峰是天柱山的主峰，海拔1488.4米，是长江以南第一高峰。峰顶建有观景台，是观赏日出、云海的绝佳位置。天柱峰巍峨挺拔，如擎天之柱，气势磅礴，令人叹为观止。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>天柱湖</h5>
+                            <p>天柱湖是天柱山脚下的一座人工湖，湖水清澈见底，湖面宽阔平静，倒映着四周青山，构成了"湖光山色"的美景。湖中有小岛点缀，环湖有步道，是游客漫步休闲的好去处。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>三祖寺</h5>
+                            <p>三祖寺是禅宗三祖僧璨大师修行的地方，始建于北周，是中国佛教禅宗的发祥地之一。寺内保存有多处古迹和文物，如三祖殿、达摩殿、舍利塔等，是研究禅宗历史的重要场所。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">自然风光</h3>
+                    <p>天柱山自然风光以"六奇、六绝、六景"著称。</p>
+                    <p><strong>六奇：</strong>指的是天柱山的奇峰、奇石、奇松、奇洞、奇泉、奇瀑。其中尤以奇峰最为壮观，山中峰峦叠嶂，形态各异，如擎天柱、笔架峰、仙女峰等，巧夺天工。</p>
+                    <p><strong>六绝：</strong>指的是云海、佛光、日出、星空、雾凇、雪景。尤其是天柱山的云海，常年可见，变幻莫测，被誉为"天柱云海，天下第一"。</p>
+                    <p><strong>六景：</strong>指的是松风、山月、晚照、晨曦、鸟鸣、泉声。这些自然景观与天柱山的山水融为一体，构成了一幅幅动态的自然画卷。</p>
+                    <p>天柱山植被覆盖率高达97%，是华东地区重要的生态屏障和生物基因库，保存了大量珍稀动植物资源。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">文化底蕴</h3>
+                    <p>天柱山历史悠久，文化底蕴深厚，是道教名山，也是佛教禅宗三祖僧璨大师修行之地。</p>
+                    <p><strong>道教文化：</strong>天柱山是道教全真派的重要道场，山上有多处道观，如玉虚宫、紫极宫等。道教文化在天柱山的发展历史悠久，对当地的民俗、文化产生了深远影响。</p>
+                    <p><strong>佛教文化：</strong>三祖寺是禅宗三祖僧璨大师的修行地，是中国禅宗文化的重要发源地之一。寺内保存的《信心铭》被誉为"禅宗第一铭"，对禅宗的发展有重要贡献。</p>
+                    <p><strong>历史名人：</strong>古代多位文人墨客曾游览天柱山并留下诗文，如李白、白居易、苏轼等。他们的作品描绘了天柱山的壮丽景色，增添了天柱山的文化魅力。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">交通指南</h3>
+                    <p><strong>自驾路线：</strong>从合肥、武汉、南京等城市可通过高速公路到达潜山市，再转到天柱山风景区。具体路线可导航"天柱山景区"。</p>
+                    <p><strong>公共交通：</strong>可乘坐火车或汽车到安庆市，再转乘到潜山市的班车，最后乘坐到天柱山景区的公交车。</p>
+                    <p><strong>景区交通：</strong>景区内有观光车、索道等交通工具，方便游客游览。也可选择徒步登山，体验更多自然风光。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">旅游贴士</h3>
+                    <ul>
+                        <li>最佳旅游季节：四季皆宜，其中春季（4-5月）花开满山，夏季（6-8月）气候凉爽，是避暑胜地；秋季（9-10月）层林尽染，冬季（11-次年2月）可观雪景。</li>
+                        <li>门票信息：旺季（3月1日-11月30日）150元/人，淡季（12月1日-2月末）100元/人，索道票另计。</li>
+                        <li>开放时间：景区全天开放，索道运营时间为7:30-16:30（季节不同可能有调整）。</li>
+                        <li>建议游览时间：1-2天，可充分体验天柱山的自然风光和文化底蕴。</li>
+                        <li>住宿信息：山上有多家酒店和农家乐，价格从几百元到上千元不等，建议提前预订。</li>
+                        <li>特色美食：推荐品尝当地特色小吃，如天柱山松针茶、天柱山山核桃、天柱山土蜂蜜等。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绩溪挞粿 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">绩溪挞粿</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/jixitaguo.jpg" alt="绩溪挞粿" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>绩溪挞粿是安徽省黄山市绩溪县的特色传统小吃，历史悠久，具有浓郁的地方特色。"挞粿"在当地方言中指的是一种薄饼状的糕点，因其美味可口，制作工艺独特，被列入安徽省非物质文化遗产名录。</p>
+                    <p>绩溪挞粿外形圆润，色泽金黄，口感酥脆香甜，有多种口味，是当地民间节庆、婚嫁喜庆、迎宾待客的必备美食，也是馈赠亲友的佳品。每当游客到访绩溪，品尝绩溪挞粿已成为必不可少的美食体验。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">特色口味</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>芝麻挞粿</h5>
+                            <p>芝麻挞粿是最传统的口味，将新鲜芝麻炒熟研磨后与糖、面粉混合制成馅料，包入面皮中烘烤而成。成品外皮金黄酥脆，内馅香甜软糯，芝麻香气浓郁，是绩溪挞粿中的代表作。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>核桃挞粿</h5>
+                            <p>核桃挞粿选用当地优质核桃仁作为主要原料，将核桃仁捣碎后与糖、面粉等混合制成馅料。成品具有核桃特有的香气，口感酥脆，营养丰富，深受中老年人喜爱。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>豆沙挞粿</h5>
+                            <p>豆沙挞粿以红豆沙为馅料，经过精细加工，使豆沙细腻甜美。这种挞粿甜而不腻，口感绵软，豆香浓郁，是女性和儿童的最爱。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史渊源</h3>
+                    <p>绩溪挞粿的历史可以追溯到明清时期，据传是由当地民间厨师创制的。</p>
+                    <p><strong>起源：</strong>相传在明代嘉靖年间，绩溪一带物产丰富，当地居民将谷物磨成面粉，与当地盛产的芝麻、核桃等原料结合，创制出了挞粿。最初的挞粿是为了方便储存和携带而制作的干粮。
+                    </p>
+                    <p><strong>发展：</strong>清代时期，绩溪商人将挞粿作为干粮携带在长途贸易途中，由于其便于携带、易于保存、口味独特，逐渐在商旅中传播开来。随着徽商的兴盛，绩溪挞粿的知名度也不断提高。
+                    </p>
+                    <p><strong>现代传承：</strong>近代以来，绩溪挞粿的制作工艺不断完善，口味也更加多样化。从最初的单一芝麻馅，发展到现在的多种口味并存。2008年，绩溪挞粿制作技艺被列入安徽省非物质文化遗产名录，进一步推动了其保护和传承。
+                    </p>
+                    <p><strong>现代发展：</strong>如今，绩溪挞粿已成为安徽省著名的特色小吃，不仅在当地广受欢迎，也走出了绩溪，走向全国。许多绩溪挞粿制作企业也应运而生，将这一传统美食产业化、规模化，使更多人能够品尝到正宗的绩溪挞粿。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">制作工艺</h3>
+                    <p>绩溪挞粿的制作工艺精细复杂，需要经过多道工序，每一步都要求匠人精益求精。</p>
+                    <p><strong>选料：</strong>选择优质的面粉、芝麻、核桃、红豆等原料是制作美味挞粿的第一步。原料必须新鲜，无霉变，保证最终成品的口感和品质。</p>
+                    <p><strong>制馅：</strong>根据不同口味，制作相应的馅料。如芝麻馅需将芝麻炒熟研磨后与糖混合；核桃馅需将核桃仁捣碎后与糖混合；豆沙馅则需将红豆煮熟去皮后加糖熬制成沙。馅料制作是决定挞粿品质的关键一步。
+                    </p>
+                    <p><strong>和面：</strong>将面粉、食用油、水按一定比例混合，揉成光滑的面团，醒发一段时间，使面团更有弹性。</p>
+                    <p><strong>包馅：</strong>将醒好的面团分成小剂子，擀成薄饼，包入馅料，捏紧收口，整形成圆形或其他形状。</p>
+                    <p><strong>烘烤：</strong>传统的绩溪挞粿是用特制的石炉烘烤的，现代则多采用烤箱。将包好馅的挞粿放入预热的炉中，控制好温度和时间，烤至表面金黄酥脆即可。</p>
+                    <p><strong>冷却：</strong>出炉后的挞粿需要放置一段时间冷却，这样更有利于口感的形成，使外皮更加酥脆，内馅更加松软。</p>
+                    <p>整个制作过程看似简单，但要做出正宗的绩溪挞粿，需要多年的经验积累和精湛的手艺。每一个环节都不能马虎，否则会影响最终成品的品质。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">文化内涵</h3>
+                    <p>绩溪挞粿不仅是一种美食，更承载着深厚的徽州文化内涵。</p>
+                    <p><strong>节庆文化：</strong>在绩溪地区，传统节日如春节、元宵节、中秋节等，家家户户都会制作挞粿，作为节日食品，象征着团圆和美好生活。尤其是在春节期间，绩溪挞粿是不可或缺的年货。
+                    </p>
+                    <p><strong>婚嫁习俗：</strong>在绩溪的传统婚礼中，挞粿是必备的嫁妆之一。新娘出嫁时，要带上精心制作的挞粿，分享给亲朋好友，象征着甜蜜美满的婚姻生活。</p>
+                    <p><strong>商业文化：</strong>徽州自古是商业发达的地区，绩溪挞粿作为徽商在外经商的干粮，见证了徽商的兴衰历程，成为徽州商业文化的一部分。</p>
+                    <p><strong>饮食文化：</strong>绩溪挞粿体现了徽州人"甜而不腻，精而不奢"的饮食理念，以及对食材的精心选择和对制作工艺的精益求精，展示了徽州饮食文化的精髓。</p>
+                    <p>如今，绩溪挞粿已成为绩溪乃至安徽的文化名片，是徽州文化的重要组成部分，也是绩溪人民智慧的结晶。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">品尝与购买</h3>
+                    <p>如果您想品尝或购买正宗的绩溪挞粿，以下是一些推荐：</p>
+                    <ul>
+                        <li><strong>绩溪县城：</strong>在绩溪县城的街头巷尾，有许多传统的挞粿店，如"老字号"、"德馨斋"等，这些店铺多为祖传手艺，制作的挞粿最为正宗。</li>
+                        <li><strong>上庄镇：</strong>上庄镇是绩溪挞粿的主要产地之一，镇上有不少挞粿作坊，可以现场观看制作过程，并品尝到新鲜出炉的挞粿。</li>
+                        <li><strong>伏岭镇：</strong>伏岭镇也是绩溪挞粿的重要产地，当地有多家挞粿专营店，产品种类丰富，质量上乘。</li>
+                        <li><strong>旅游景点：</strong>绩溪的主要旅游景点，如龙川风景区、胡文学故居等，周边都有销售绩溪挞粿的商店，方便游客购买。</li>
+                        <li><strong>网购：</strong>现在许多绩溪挞粿生产企业已开通了网络销售渠道，可以通过电商平台购买，送货上门，非常方便。</li>
+                    </ul>
+                    <p><strong>购买建议：</strong>选择信誉好的品牌或店铺，注意查看生产日期和保质期。绩溪挞粿保质期一般为一到三个月，建议在保质期内尽快食用，以保证最佳口感。储存时应放在干燥通风处，避免受潮。
+                    </p>
+                    <p>品尝绩溪挞粿，不仅能享受美食的乐趣，还能感受徽州文化的魅力，是旅游绩溪不可错过的体验。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>

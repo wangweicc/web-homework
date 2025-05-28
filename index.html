@@ -20,14 +20,22 @@
         }
 
         .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
             border-radius: 0 0 18px 18px;
-            min-height: 70px;
+            min-height: 80px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .navbar .navbar-brand img {
-            height: 50px;
+            height: 70px;
+            max-height: 70px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar .navbar-brand img:hover {
+            transform: scale(1.05);
         }
 
         .carousel-item {
@@ -36,6 +44,7 @@
             background-position: center;
             border-radius: 24px;
             overflow: hidden;
+            box-shadow: 0 8px 32px rgba(45, 95, 42, 0.18);
         }
 
         .carousel-caption {
@@ -73,6 +82,7 @@
             position: relative;
             padding-bottom: 18px;
             margin-bottom: 48px;
+            margin-top: 120px;
         }
 
         .section-title::after {
@@ -96,10 +106,12 @@
         }
 
         footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 8px 0 1px 0;
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 18px 0 6px 0;
             border-radius: 0;
+            font-size: 0.98rem;
+            letter-spacing: 1px;
         }
 
         #homeCarousel {
@@ -115,6 +127,119 @@
                 padding: 12px 8px;
             }
         }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+            transform: scale(1.08);
+        }
+
+        .overview-box {
+            background: linear-gradient(120deg, #e6edea 60%, #f8f9fa 100%);
+            border-radius: 22px;
+            box-shadow: 0 6px 32px rgba(45, 95, 42, 0.13);
+            padding: 36px 40px 28px 40px;
+            margin-bottom: 18px;
+            border: 1.5px solid #c2d1c0;
+            color: #2d5f2a;
+            font-size: 1.08rem;
+        }
+
+        .overview-box ul {
+            margin: 0;
+            padding-left: 1.2em;
+            font-size: 1.01rem;
+        }
+
+        .overview-box p {
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .map-img {
+            transition: transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 2px 12px rgba(45, 95, 42, 0.10);
+        }
+
+        .map-img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 32px rgba(45, 95, 42, 0.18);
+        }
+
+        .card {
+            border-radius: 28px;
+            overflow: hidden;
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            transition: transform 0.22s, box-shadow 0.22s;
+        }
+
+        .card:hover {
+            transform: translateY(-14px) scale(1.04);
+            box-shadow: 0 20px 40px rgba(45, 95, 42, 0.18);
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.18rem;
+        }
+
+        .card-img-top {
+            border-radius: 22px 22px 0 0;
+        }
+
+        #messageForm .form-control {
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(45, 95, 42, 0.10);
+            border: 1.5px solid #c2d1c0;
+        }
+
+        .btn.btn-primary {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            border: none;
+            padding: 12px 32px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 1.08rem;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 12px rgba(45, 95, 42, 0.13);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .btn.btn-primary:hover {
+            background: linear-gradient(90deg, #2d5f2a 60%, #8ba989 100%);
+            box-shadow: 0 8px 24px rgba(45, 95, 42, 0.18);
+        }
+
+        #messageList .list-group-item {
+            border: none;
+            border-bottom: 1.5px solid #d2dbd6;
+            border-radius: 0;
+            margin-bottom: 2px;
+            background: rgba(230, 237, 234, 0.55);
+            box-shadow: none;
+        }
+
+        #messageList strong {
+            font-weight: 700;
+            color: #2d5f2a;
+        }
     </style>
 </head>
 
@@ -122,22 +247,22 @@
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="logo.png" alt="大美安徽" height="40"></a>
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">首页</a></li>
-                    <li class="nav-item"><a class="nav-link" href="scenery.html">山水安徽</a></li>
-                    <li class="nav-item"><a class="nav-link" href="culture.html">人文安徽</a></li>
-                    <li class="nav-item"><a class="nav-link" href="food.html">美食安徽</a></li>
-                    <!-- 新增登录链接 -->
+                    <li class="nav-item"><a class="nav-link nav-btn" href="#home">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="food.html">美食安徽</a></li>
                     <li class="nav-item" id="login-nav-item">
-                        <a class="nav-link" href="login.html">登录/注册</a>
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
                     </li>
                     <li class="nav-item dropdown d-none" id="user-nav-item">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <span id="nav-username"></span>
                         </a>
@@ -179,6 +304,8 @@
         </button>
     </div>
 
+    <div class="carousel-divider"></div>
+
     <!-- 安徽概览 -->
     <section id="about" class="container py-5" data-aos="fade-up">
         <div class="row justify-content-center">
@@ -186,17 +313,60 @@
                 <h2 class="text-center section-title">安徽概览</h2>
             </div>
             <div class="col-md-8">
-                <p>安徽，简称"皖"，地处中国华东地区，拥有丰富的自然资源和深厚的历史文化底蕴。省会合肥，著名景点有黄山、宏村等。</p>
-                <ul style="max-width: 400px; margin: 0 auto;">
-                    <li>地理位置：长江、淮河流域</li>
-                    <li>人口：6,000万+</li>
-                    <li>主要城市：合肥、芜湖、安庆等</li>
-                </ul>
+                <div class="overview-box">
+                    <p>安徽，简称"皖"，地处中国华东地区，东邻江苏、浙江，西接湖北、河南，南连江西，北靠山东。省会合肥，著名景点有黄山、九华山、宏村、西递等。</p>
+                    <ul>
+                        <li>地理位置：长江、淮河流域</li>
+                        <li>人口：6,000万+</li>
+                        <li>包含城市：合肥、芜湖、蚌埠、淮南、马鞍山、淮北、铜陵、安庆、黄山、阜阳、宿州、滁州、六安、宣城、池州和亳州。</li>
+                    </ul>
+                    <p></p>
+                    <p>历史文化：安徽历史悠久，是中华文明的重要发源地之一，拥有丰富的历史文化遗产。徽派建筑、徽剧、新安医学等都是其独特的文化符号。徽商曾是中国历史上重要的商业力量，对中国的经济发展有着深远的影响。
+                    </p>
+                    <p></p>
+                    <p>特色美食：徽菜是中国八大菜系之一，注重原汁原味，擅长炖、煮、蒸等烹饪方式，如臭鳜鱼、毛豆腐等都是徽菜中的经典菜品。</p>
+                </div>
             </div>
             <div class="col-md-4 d-flex align-items-center justify-content-center">
                 <img src="pictures/map.jpg" alt="安徽地图" class="img-fluid rounded shadow map-img"
-                    style="max-width: 220px; cursor: pointer;"
+                    style="max-width: 220px; cursor: pointer;" usemap="#anhui-map"
                     onerror="this.onerror=null;this.src='picture/map.png';this.alt='地图未找到';">
+                <map name="anhui-map" id="anhui-map">
+                    <!-- 合肥市 -->
+                    <area shape="circle" coords="220,375,25" alt="合肥市" title="合肥市" class="map-area">
+                    <!-- 芜湖市 -->
+                    <area shape="circle" coords="255,420,20" alt="芜湖市" title="芜湖市" class="map-area">
+                    <!-- 蚌埠市 -->
+                    <area shape="circle" coords="250,240,20" alt="蚌埠市" title="蚌埠市" class="map-area">
+                    <!-- 淮南市 -->
+                    <area shape="circle" coords="220,310,20" alt="淮南市" title="淮南市" class="map-area">
+                    <!-- 马鞍山市 -->
+                    <area shape="circle" coords="280,380,20" alt="马鞍山市" title="马鞍山市" class="map-area">
+                    <!-- 淮北市 -->
+                    <area shape="circle" coords="190,180,20" alt="淮北市" title="淮北市" class="map-area">
+                    <!-- 铜陵市 -->
+                    <area shape="circle" coords="250,390,20" alt="铜陵市" title="铜陵市" class="map-area">
+                    <!-- 安庆市 -->
+                    <area shape="circle" coords="160,440,20" alt="安庆市" title="安庆市" class="map-area">
+                    <!-- 黄山市 -->
+                    <area shape="circle" coords="300,470,20" alt="黄山市" title="黄山市" class="map-area">
+                    <!-- 阜阳市 -->
+                    <area shape="poly"
+                        coords="269,426,188,446,178,545,119,595,44,564,44,622,119,672,120,773,147,773,151,803,178,780,213,791,209,823,243,841,276,820,317,816,352,775,387,800,414,844,454,817,492,846,512,836,528,817,551,813,505,761,495,690,460,695,434,680,422,662,396,645,392,617,351,604,326,572,343,549,351,512,335,484"
+                        alt="阜阳市" title="阜阳市" class="map-area">
+                    <!-- 宿州市 -->
+                    <area shape="circle" coords="200,200,20" alt="宿州市" title="宿州市" class="map-area">
+                    <!-- 滁州市 -->
+                    <area shape="circle" coords="270,320,20" alt="滁州市" title="滁州市" class="map-area">
+                    <!-- 六安市 -->
+                    <area shape="circle" coords="150,350,20" alt="六安市" title="六安市" class="map-area">
+                    <!-- 宣城市 -->
+                    <area shape="circle" coords="320,430,20" alt="宣城市" title="宣城市" class="map-area">
+                    <!-- 池州市 -->
+                    <area shape="circle" coords="240,460,20" alt="池州市" title="池州市" class="map-area">
+                    <!-- 亳州市 -->
+                    <area shape="circle" coords="120,240,20" alt="亳州市" title="亳州市" class="map-area">
+                </map>
             </div>
         </div>
     </section>
@@ -204,8 +374,64 @@
     <!-- 地图放大预览弹窗 -->
     <div id="mapModal"
         style="display:none;position:fixed;z-index:2000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;">
-        <img id="mapModalImg" src="pictures/map.jpg" alt="安徽地图大图"
+        <img id="mapModalImg" src="pictures/map.jpg" alt="安徽地图大图" usemap="#anhui-map-large"
             style="max-width:90vw;max-height:90vh;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.25);background:#fff;">
+        <map name="anhui-map-large" id="anhui-map-large">
+            <!-- 放大图的热点区域坐标需要按比例调整 -->
+            <!-- 合肥市 -->
+            <area shape="circle" coords="313,448,60" href="http://www.hefei.gov.cn/" target="_blank" alt="合肥市"
+                title="合肥市">
+            <!-- 芜湖市 -->
+            <area shape="circle" coords="422,545,40" href="http://www.wuhu.gov.cn/" target="_blank" alt="芜湖市"
+                title="芜湖市">
+            <!-- 蚌埠市 -->
+            <area shape="circle" coords="312,249,40" href="http://www.bengbu.gov.cn/" target="_blank" alt="蚌埠市"
+                title="蚌埠市">
+            <!-- 淮南市 -->
+            <area shape="circle" coords="237,371,35" href="http://www.huainan.gov.cn/" target="_blank" alt="淮南市"
+                title="淮南市">
+            <area shape="circle" coords="243,311,30" href="http://www.huainan.gov.cn/" target="_blank" alt="淮南市"
+                title="淮南市">
+            <!-- 马鞍山市 -->
+            <area shape="circle" coords="414,466,30" href="http://www.mas.gov.cn/" target="_blank" alt="马鞍山市"
+                title="马鞍山市">
+            <area shape="circle" coords="416,503,20" href="http://www.mas.gov.cn/" target="_blank" alt="马鞍山市"
+                title="马鞍山市">
+            <!-- 淮北市 -->
+            <area shape="circle" coords="243,158,20" href="http://www.huaibei.gov.cn/" target="_blank" alt="淮北市"
+                title="淮北市">
+            <!-- 铜陵市 -->
+            <area shape="circle" coords="300,585,20" href="http://www.tl.gov.cn/" target="_blank" alt="铜陵市" title="铜陵市">
+            <area shape="circle" coords="371,574,20" href="http://www.tl.gov.cn/" target="_blank" alt="铜陵市" title="铜陵市">
+            <!-- 安庆市 -->
+            <area shape="circle" coords="178,624,60" href="http://www.anqing.gov.cn/" target="_blank" alt="安庆市"
+                title="安庆市">
+            <!-- 黄山市 -->
+            <area shape="circle" coords="386,733,40" href="http://www.huangshan.gov.cn/" target="_blank" alt="黄山市"
+                title="黄山市">
+            <!-- 阜阳市 -->
+            <area shape="circle" coords="105,273,50" href="http://www.fy.gov.cn/" target="_blank" alt="阜阳市" title="阜阳市">
+            <!-- 宿州市 -->
+            <area shape="circle" coords="329,152,50" href="http://www.ahsz.gov.cn/" target="_blank" alt="宿州市"
+                title="宿州市">
+            <area shape="circle" coords="255,68,20" href="http://www.ahsz.gov.cn/" target="_blank" alt="宿州市"
+                title="宿州市">
+            <!-- 滁州市 -->
+            <area shape="circle" coords="402,344,60" href="http://www.chuzhou.gov.cn/" target="_blank" alt="滁州市"
+                title="滁州市">
+            <!-- 六安市 -->
+            <area shape="circle" coords="168,474,60" href="http://www.luan.gov.cn/" target="_blank" alt="六安市"
+                title="六安市">
+            <!-- 宣城市 -->
+            <area shape="circle" coords="487,625,50" href="http://www.xuancheng.gov.cn/" target="_blank" alt="宣城市"
+                title="宣城市">
+            <!-- 池州市 -->
+            <area shape="circle" coords="312,659,40" href="http://www.chizhou.gov.cn/" target="_blank" alt="池州市"
+                title="池州市">
+            <!-- 亳州市 -->
+            <area shape="circle" coords="186,203,40" href="http://www.bozhou.gov.cn/" target="_blank" alt="亳州市"
+                title="亳州市">
+        </map>
     </div>
 
     <!-- 专题推荐 -->
@@ -213,9 +439,12 @@
         <h2 class="text-center section-title">专题推荐</h2>
         <div class="row justify-content-center g-3">
             <div class="col-6 col-md-3">
-                <a href="spring-flower.html" class="text-decoration-none">
+                <a href="spring.html" class="text-decoration-none">
                     <div class="card h-100 shadow-sm">
-                        <img src="spring-flower.jpg" class="card-img-top" alt="春季赏花">
+                        <div style="height: 200px; overflow: hidden; display: flex; align-items: flex-start;">
+                            <img src="pictures/spring-flowers.jpg" class="card-img-top" alt="春季赏花"
+                                style="object-fit: cover; width: 100%; height: 100%;">
+                        </div>
                         <div class="card-body text-center">
                             <h5 class="card-title">春季赏花</h5>
                             <p class="card-text small text-muted">踏青赏花好时节</p>
@@ -224,34 +453,43 @@
                 </a>
             </div>
             <div class="col-6 col-md-3">
-                <a href="summer-cool.html" class="text-decoration-none">
+                <a href="summer.html" class="text-decoration-none">
                     <div class="card h-100 shadow-sm">
-                        <img src="summer-cool.jpg" class="card-img-top" alt="夏季避暑">
+                        <div style="height: 200px; overflow: hidden; display: flex; align-items: flex-start;">
+                            <img src="pictures/summer-cool.jpg" class="card-img-top" alt="夏季避暑"
+                                style="object-fit: cover; width: 100%; height: 100%;">
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">夏季避暑胜地</h5>
+                            <h5 class="card-title">夏季避暑</h5>
                             <p class="card-text small text-muted">清凉一夏，畅游安徽</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-6 col-md-3">
-                <a href="spring-festival.html" class="text-decoration-none">
+                <a href="autumn.html" class="text-decoration-none">
                     <div class="card h-100 shadow-sm">
-                        <img src="spring-festival.jpg" class="card-img-top" alt="春节专题">
+                        <div style="height: 200px; overflow: hidden; display: flex; align-items: flex-start;">
+                            <img src="pictures/autumn.jpg" class="card-img-top" alt="秋季摘果"
+                                style="object-fit: cover; width: 100%; height: 100%;">
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">春节专题</h5>
-                            <p class="card-text small text-muted">年味安徽，民俗盛宴</p>
+                            <h5 class="card-title">秋季摘果</h5>
+                            <p class="card-text small text-muted">金秋采摘，碳果飘香</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-6 col-md-3">
-                <a href="dragonboat.html" class="text-decoration-none">
+                <a href="winter.html" class="text-decoration-none">
                     <div class="card h-100 shadow-sm">
-                        <img src="dragonboat.jpg" class="card-img-top" alt="端午节专题">
+                        <div style="height: 200px; overflow: hidden; display: flex; align-items: flex-start;">
+                            <img src="pictures/winter.jpg" class="card-img-top" alt="冬季观雪"
+                                style="object-fit: cover; width: 100%; height: 100%;">
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">端午节专题</h5>
-                            <p class="card-text small text-muted">粽香端午，赛龙舟</p>
+                            <h5 class="card-title">冬季观雪</h5>
+                            <p class="card-text small text-muted">银装素裹，梦入徽州</p>
                         </div>
                     </div>
                 </a>
@@ -389,14 +627,83 @@
         });
 
         // 地图图片点击放大预览
-        document.querySelector('.map-img').addEventListener('click', function () {
+        document.querySelector('.map-img').addEventListener('click', function (e) {
+            // 无论点击哪里都显示模态框
             document.getElementById('mapModal').style.display = 'flex';
         });
+
+        // 为小地图上的热点区域添加点击事件
+        document.querySelectorAll('#anhui-map area').forEach(function (area) {
+            area.addEventListener('click', function (e) {
+                e.preventDefault(); // 阻止默认行为
+                document.getElementById('mapModal').style.display = 'flex';
+            });
+        });
+
         document.getElementById('mapModal').addEventListener('click', function (e) {
             if (e.target === this) {
                 this.style.display = 'none';
             }
         });
+
+        // 为图像映射添加响应式支持
+        function initImageMap() {
+            // 创建用于响应式图像映射的函数
+            function makeImageMapResponsive(mapId) {
+                var imageMap = document.getElementById(mapId);
+                var img = document.querySelector('img[usemap="#' + mapId + '"]');
+                var originalWidth = img.naturalWidth;
+                var originalHeight = img.naturalHeight;
+
+                function updateImageMap() {
+                    var currentWidth = img.offsetWidth;
+                    var currentHeight = img.offsetHeight;
+
+                    if (currentWidth === 0 || currentHeight === 0) return;
+
+                    var widthRatio = currentWidth / originalWidth;
+                    var heightRatio = currentHeight / originalHeight;
+
+                    var areas = imageMap.getElementsByTagName('area');
+                    for (var i = 0; i < areas.length; i++) {
+                        var coords = areas[i].getAttribute('data-original-coords');
+                        if (!coords) {
+                            coords = areas[i].getAttribute('coords');
+                            areas[i].setAttribute('data-original-coords', coords);
+                        }
+
+                        var coordsArray = coords.split(',');
+                        var newCoords = [];
+
+                        if (areas[i].getAttribute('shape').toLowerCase() === 'circle') {
+                            newCoords.push(Math.round(coordsArray[0] * widthRatio));
+                            newCoords.push(Math.round(coordsArray[1] * heightRatio));
+                            newCoords.push(Math.round(coordsArray[2] * Math.max(widthRatio, heightRatio)));
+                        } else {
+                            for (var j = 0; j < coordsArray.length; j++) {
+                                if (j % 2 === 0) {
+                                    newCoords.push(Math.round(coordsArray[j] * widthRatio));
+                                } else {
+                                    newCoords.push(Math.round(coordsArray[j] * heightRatio));
+                                }
+                            }
+                        }
+
+                        areas[i].setAttribute('coords', newCoords.join(','));
+                    }
+                }
+
+                window.addEventListener('resize', updateImageMap);
+                updateImageMap();
+            }
+
+            // 初始化两个图像映射
+            makeImageMapResponsive('anhui-map');
+            makeImageMapResponsive('anhui-map-large');
+        }
+
+        // 页面加载完成后初始化图像映射
+        window.addEventListener('load', initImageMap);
     </script>
 </body>
 

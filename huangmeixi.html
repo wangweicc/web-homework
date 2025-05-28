@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄梅戏 - 大美安徽</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pictures/huangmeixi.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(3px);
+            min-height: 100%;
+            min-width: 100%;
+        }
+
+        .container {
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        .section-title {
+            color: #2d5f2a;
+            font-weight: bold;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 18px;
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5f2a, #8ba989);
+            border-radius: 2px;
+        }
+
+        .detail-card {
+            background: linear-gradient(120deg, #f8f9fa 60%, #e6edea 100%);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.08);
+            padding: 32px 28px;
+            margin-bottom: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        footer {
+            background: rgb(105, 142, 102);
+            color: #fff;
+            padding: 0px 0 1px 0;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .navbar {
+            min-height: 92px;
+            height: 60px;
+            background: rgba(105, 142, 102, 0.92) !important;
+            box-shadow: 0 4px 24px rgba(45, 95, 42, 0.10);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .nav-btn {
+            border-radius: 18px !important;
+            background: linear-gradient(90deg, #e6edea 60%, #c2d1c0 100%);
+            color: #2d5f2a !important;
+            margin: 0 8px;
+            padding: 8px 22px !important;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(45, 95, 42, 0.06);
+            border: 1.5px solid #8ba989;
+        }
+
+        .nav-btn.active,
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: linear-gradient(90deg, #8ba989 60%, #2d5f2a 100%);
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.13);
+            border: 1.5px solid #2d5f2a;
+        }
+
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="pictures/logo.png" alt="大美安徽" height="70"
+                    style="max-height: 70px; margin-top: -8px; margin-bottom: -8px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link nav-btn" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="scenery.html">山水安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn active" href="culture.html">人文安徽</a></li>
+                    <li class="nav-item"><a class="nav-link nav-btn" href="food.html">美食安徽</a></li>
+                    <li class="nav-item" id="login-nav-item">
+                        <a class="nav-link nav-btn" href="login.html">登录/注册</a>
+                    </li>
+                    <li class="nav-item dropdown d-none" id="user-nav-item">
+                        <a class="nav-link dropdown-toggle nav-btn" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="nav-username"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" id="logout-btn">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h2 class="section-title text-center" data-aos="fade-up">黄梅戏</h2>
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="pictures/huangmeixi.jpg" alt="黄梅戏表演" class="feature-img mb-4">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="detail-card h-100">
+                    <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
+                    <p>黄梅戏是中国五大戏曲剧种之一，主要流行于安徽、湖北、江西、江苏等地，发源于安徽省安庆市怀宁县和潜山市交界的黄梅山区，因而得名。2006年，黄梅戏被列入第一批国家级非物质文化遗产名录。</p>
+                    <p>黄梅戏音乐典雅优美，唱腔清新质朴，表演朴实无华，剧目多表现平民百姓的日常生活和爱情故事，具有浓郁的乡土气息和生活情趣，深受广大群众喜爱，被誉为"中国最有魅力的戏曲剧种"。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">艺术特色</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h5>唱腔特点</h5>
+                            <p>黄梅戏唱腔以"黄梅调"为基础，吸收了民间小调、山歌等多种音乐元素，形成了自己独特的风格。其音调优美动听，节奏明快流畅，既有北方戏曲的刚劲豪放，又有南方戏曲的婉约细腻，音域不高不低，适合一般人演唱。
+                            </p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>表演风格</h5>
+                            <p>黄梅戏表演朴实自然，不追求华丽的舞台效果，而是注重内在情感的表达。演员动作细腻传神，以真情实感打动观众。特别是在塑造平民形象方面，黄梅戏有着独到的艺术魅力。</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h5>剧目特色</h5>
+                            <p>黄梅戏剧目多取材于民间传说和历史故事，主要表现普通百姓的生活和爱情故事，题材贴近生活，内容通俗易懂，既有欢乐喜剧，也有悲情正剧，深受观众喜爱。代表剧目有《天仙配》《女驸马》《牛郎织女》《孟丽君》等。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">历史渊源</h3>
+                    <p>黄梅戏的历史可以追溯到明清时期，经历了漫长的发展历程。</p>
+                    <p><strong>起源：</strong>黄梅戏源于安徽省安庆市怀宁县和潜山市交界的黄梅山区，最初是当地农民在劳动或闲暇时唱的"花鼓调"和"采茶歌"，后来逐渐发展成为一种民间小戏。</p>
+                    <p><strong>形成：</strong>清代道光年间（1821年-1850年），艺人在原有的"花鼓调"基础上，吸收了徽剧、采茶戏等多种剧种的艺术特色，形成了最早的黄梅戏雏形，称为"怀腔"。
+                    </p>
+                    <p><strong>发展：</strong>清末民初，艺人严凤英的父亲严万喜等人将"怀腔"带到安庆一带演出，并对唱腔、表演等方面进行了改良，使黄梅戏更加完善，开始在安徽南部地区流行。</p>
+                    <p><strong>繁荣：</strong>20世纪50年代至60年代初，是黄梅戏的繁荣时期。1955年，严凤英主演的黄梅戏电影《天仙配》在全国公映，引起轰动，使黄梅戏走向全国，成为家喻户晓的戏曲剧种。
+                    </p>
+                    <p><strong>新发展：</strong>改革开放后，黄梅戏得到了进一步发展，涌现出一批优秀的演员和剧目，如《女驸马》《孟丽君》《徽州女人》等，黄梅戏艺术也走出国门，走向世界。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">代表剧目</h3>
+                    <p><strong>《天仙配》：</strong>黄梅戏的代表作之一，讲述了董永与七仙女的凄美爱情故事。这部剧不仅情节生动感人，唱腔优美动听，还通过七仙女下凡的故事，表现了劳动人民对美好生活的向往。1955年，严凤英主演的黄梅戏电影《天仙配》风靡全国，使黄梅戏走向全国。
+                    </p>
+                    <p><strong>《女驸马》：</strong>这是黄梅戏的又一经典剧目，讲述了才女冯素珍女扮男装考取状元，被封为驸马的故事。剧中的"对花"、"洞房"等选段唱腔优美，表演生动，是黄梅戏的经典唱段。
+                    </p>
+                    <p><strong>《牛郎织女》：</strong>改编自中国民间传说，讲述了牛郎和织女相爱、结婚、被拆散、相会的凄美爱情故事。剧中的"山前山后百鸟啼"、"鹊桥相会"等唱段感人至深，是黄梅戏的代表性唱段。
+                    </p>
+                    <p><strong>《孟丽君》：</strong>讲述了才女孟丽君女扮男装出游，结识驸马黄润甫，二人互生情愫的故事。剧中的"思凡"、"游上林"等唱段唱腔优美，表演细腻，深受观众喜爱。</p>
+                    <p><strong>《徽州女人》：</strong>这是一部现代黄梅戏，讲述了安徽徽州地区妇女在特定历史背景下的生活和情感故事，展示了徽州女性坚韧不拔的性格和勤劳善良的品质。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">著名艺术家</h3>
+                    <p><strong>严凤英：</strong>黄梅戏表演艺术家，被誉为"黄梅戏皇后"。她嗓音甜美，表演真挚自然，塑造了《天仙配》中的七仙女、《女驸马》中的冯素珍等多个经典角色，为黄梅戏的发展和普及做出了巨大贡献。
+                    </p>
+                    <p><strong>王少舫：</strong>黄梅戏表演艺术家，与严凤英并称"黄梅戏双星"。他嗓音洪亮，表演朴实有力，塑造了《天仙配》中的董永、《牛郎织女》中的牛郎等多个经典角色。</p>
+                    <p><strong>韩再芬：</strong>当代著名黄梅戏表演艺术家，安徽省黄梅戏剧院院长。她嗓音甜美，表演细腻传神，在继承传统的基础上，不断创新，推出了《女驸马》《徽州女人》等多部优秀剧目，为黄梅戏的现代发展做出了重要贡献。
+                    </p>
+                    <p><strong>吴琼：</strong>当代著名黄梅戏表演艺术家，擅长青衣和花旦角色，嗓音甜美纯净，表演细腻入微，在《天仙配》《女驸马》等多部经典剧目中有出色表现。</p>
+                    <p><strong>马兰：</strong>著名黄梅戏表演艺术家，擅长旦角，嗓音甜美，表演细腻，为黄梅戏的发展和传播做出了重要贡献。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-12" data-aos="fade-up">
+                <div class="detail-card">
+                    <h3 class="mb-3" style="color: #2d5f2a;">观赏指南</h3>
+                    <p>如果您对黄梅戏感兴趣，以下是一些观赏建议：</p>
+                    <ul>
+                        <li><strong>安徽省黄梅戏剧院：</strong>位于安徽省合肥市，是黄梅戏的专业演出团体，常年演出黄梅戏经典剧目，是欣赏正宗黄梅戏的好去处。</li>
+                        <li><strong>安庆市黄梅戏艺术中心：</strong>位于安徽省安庆市，是黄梅戏的发源地，有专业的黄梅戏演出团体，定期举办黄梅戏演出活动。</li>
+                        <li><strong>黄梅戏博物馆：</strong>位于安徽省安庆市，是了解黄梅戏历史、文化和艺术特色的好地方，馆内收藏了大量黄梅戏相关文物和资料。</li>
+                        <li><strong>黄梅戏艺术节：</strong>每两年举办一次，在安庆市举行，会有来自全国各地的黄梅戏演出团体参加，演出多部优秀剧目，是欣赏黄梅戏的好机会。</li>
+                        <li><strong>线上资源：</strong>可以通过视频网站观看黄梅戏经典剧目的录像，如《天仙配》《女驸马》《牛郎织女》等，初学者可以从这些经典剧目开始了解黄梅戏。</li>
+                    </ul>
+                    <p>观赏黄梅戏时，可以关注演员的唱腔和表演，感受黄梅戏独特的艺术魅力，领略中国传统戏曲文化的博大精深。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 大美安徽文化旅游网</p>
+            <p>皖ICP备12345678号</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: false, offset: 80 });
+
+        // 登录状态切换显示用户名和退出
+        function updateNavUser() {
+            var isLogin = window.localStorage.getItem('isLogin');
+            var regUser = window.localStorage.getItem('registerUser');
+            var loginNav = document.getElementById('login-nav-item');
+            var userNav = document.getElementById('user-nav-item');
+            if (isLogin === '1' && regUser) {
+                var userObj = JSON.parse(regUser);
+                document.getElementById('nav-username').textContent = userObj.username;
+                loginNav.classList.add('d-none');
+                userNav.classList.remove('d-none');
+            } else {
+                loginNav.classList.remove('d-none');
+                userNav.classList.add('d-none');
+            }
+        }
+        updateNavUser();
+
+        // 退出按钮
+        var logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.localStorage.removeItem('isLogin');
+                updateNavUser();
+            });
+        }
+    </script>
+</body>
+
+</html>
