@@ -21,7 +21,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('pictures/jiuhuashan.jpg') no-repeat center center;
+            background: url('pictures/jiuhuashan2.jpg') no-repeat center center;
             background-size: cover;
             background-attachment: scroll;
             opacity: 0.2;
@@ -106,8 +106,21 @@
 
         .feature-img {
             width: 100%;
+            height: 100%;
+            /* 新增高度设置 */
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(45, 95, 42, 0.1);
+            object-fit: cover;
+            /* 新增图片填充方式 */
+            object-position: center top;
+            /* 保持顶部对齐 */
+        }
+
+        /* 新增图片容器样式 */
+        .col-lg-6[data-aos="fade-right"] {
+            height: 450px;
+            /* 设置固定高度控制图片显示区域 */
+            overflow: hidden;
         }
     </style>
 </head>
@@ -152,7 +165,8 @@
             <div class="col-lg-6" data-aos="fade-left">
                 <div class="detail-card h-100">
                     <h3 class="mb-3" style="color: #2d5f2a;">简介</h3>
-                    <p>九华山位于安徽省池州市青阳县境内，是中国佛教四大名山之一，是地藏菩萨的道场，被誉为"地藏菩萨的家乡"。九华山是国家5A级旅游景区，是集自然风光与佛教文化为一体的著名旅游胜地。</p>
+                    <p>九华山位于安徽省池州市青阳县境内，是中国佛教四大名山之一，是地藏菩萨的道场，被誉为"地藏菩萨的家乡"。九华山是国家5A级旅游景区，是集自然风光与佛教文化为一体
+                        的著名旅游胜地。</p>
                     <p>九华山形成于侏罗纪，历经亿万年的地质运动，形成了奇峰怪石、峡谷溪流、瀑布深潭等丰富多彩的自然景观。山上寺庙众多，香火鼎盛，是中国佛教禅宗、净土宗的重要传播地。</p>
                 </div>
             </div>

@@ -17,6 +17,22 @@
         body {
             font-family: 'Microsoft YaHei', '华文行楷', sans-serif;
             background: linear-gradient(135deg, #f8f9fa 0%, #e6edea 100%);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pictures/index-background.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -1;
+            filter: blur(5px);
         }
 
         .navbar {
@@ -276,7 +292,7 @@
     </nav>
 
     <!-- 轮播图 -->
-    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="pictures/lunbo1.jpg" class="d-block w-100 carousel-img" alt="轮播1">
